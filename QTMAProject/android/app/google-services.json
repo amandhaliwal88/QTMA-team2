@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "775298191980",
+    "firebase_url": "https://qtmaproject.firebaseio.com",
+    "project_id": "qtmaproject",
+    "storage_bucket": "qtmaproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775298191980:android:e7bd2b9fb90584820c3e49",
+        "android_client_info": {
+          "package_name": "com.qtmaproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775298191980-dmkc8pochgvavdkm63rr488b4vug6619.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA53CM0S23hwtoCeWP5GkZdtmMYt5o5aoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775298191980-dmkc8pochgvavdkm63rr488b4vug6619.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "775298191980-d27d9hbfn4939fds305k3n8oetsejp69.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.qtmaproject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
