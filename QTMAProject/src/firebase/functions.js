@@ -3,7 +3,12 @@ import auth from "@react-native-firebase/auth";
 export function login({ email, password }) {
   auth()
     .signInWithEmailAndPassword(email, password)
-    .then((value) => console.log(value));
+    .then((userInfo) => {
+      console.log(userInfo)
+      if(!userInfo.user.emailVerified){
+        userInfo.user.sendEmailVerification();
+      }
+    });
 }
 
 export function signup({ email, password, displayName }) {
@@ -14,6 +19,7 @@ export function signup({ email, password, displayName }) {
       userInfo.user
         .updateProfile({ displayName: displayName.trim() })
         .then(() => {});
+      userInfo.user.sendEmailVerification();
     });
 }
 
