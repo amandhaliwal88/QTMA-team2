@@ -63,6 +63,14 @@ const AuthForm = (props) => {
           <Text style={{color: '#1e90ff'}}>SignUp</Text>
         </Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.authSwitch}>
+        <Text style={styles.passwordRecoveryButton}>
+          Forgot your password? {' '}
+          <Text style={{color:'#1e90ff'}}>Recover Password</Text>
+        </Text>
+        </TouchableOpacity>
     </View>
   );
 
