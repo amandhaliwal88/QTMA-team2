@@ -8,7 +8,24 @@ export function login({ email, password }) {
       console.log(userInfo)
       if(!userInfo.user.emailVerified){
         auth().signOut(); // the effect of the above sign in method (that is needed to access the userInfo packet) needs to be reversed to prevent errors
-        Alert.alert("Account not yet verified", "In order to proceed, the email associated with this account needs to be verified.");
+        Alert.alert(
+          "Account not yet verified",
+          "In order to proceed, the email associated with this account needs to be verified.",
+          [
+            {
+              text: "Resend Email",
+              onPress: (()=> {
+                userInfo.user.sendEmailVerification()
+                .then(console.log("verification email resent"));
+              }),
+              style: "cancel"
+            },
+            {
+              text: "Okay",
+              onPress: ()=> console.log("Log-in Alert closed")
+            }
+          ]
+          );
       }
     });
 }
@@ -22,7 +39,16 @@ export function signup({ email, password, displayName }) {
         .updateProfile({ displayName: displayName.trim() })
         .then(() => {});
       userInfo.user.sendEmailVerification()
-        .then(() => Alert.alert("Account Created","A message has been sent to your email containing a verification link. Please open the link before proceeding."));
+        .then(() => Alert.alert(
+          "Account Created",
+          "A message has been sent to your email containing a verification link. Please open the link before proceeding.",
+          [
+            {
+              text: "Okay",
+              onPress: ()=> console.log("Sign-up Alert closed"),
+              style: "cancel"
+            }
+          ]));
     })
 }
 
