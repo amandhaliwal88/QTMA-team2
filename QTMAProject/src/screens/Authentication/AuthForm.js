@@ -174,7 +174,7 @@ export default withFormik({
     }
 
     if (values.rePWD != values.password){
-      errors.rePWD = 'Passwords must match'
+      errors.rePWD = 'Passwords must match' // must check if passwords match
     }
     return errors;
   },
