@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/Drawer/home';
 import SettingsScreen from '../screens/Drawer/settings';
+import ExploreScreen from '../screens/Drawer/explore';
 import Ionicons from "react-native-vector-icons/Ionicons"
 
 const Tab = createBottomTabNavigator();
@@ -36,7 +37,7 @@ export function MainStackNavigator() {
           }}
         >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Explore" component={HomeScreen}/>
+        <Tab.Screen name="Explore" component={ExploreScreen}/>
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
   );
