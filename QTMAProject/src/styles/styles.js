@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   form: {
     flex: 1,
     margin: 25,
+    justifyContent: 'space-between'
   },
   authInput: {marginTop: 5},
   authButton: {marginTop: 20},
@@ -37,7 +38,7 @@ export const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    //alignItems: 'flex-start',
     marginTop: 30,
   },
   image: {
