@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
   form: {
     flex: 1,
     margin: 25,
-    justifyContent: 'space-between'
   },
   authInput: {marginTop: 5},
   authButton: {marginTop: 20},
@@ -48,4 +47,27 @@ export const styles = StyleSheet.create({
   loading: {
     marginTop: 300,
   },
+
+  profileHeading: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  profileHeadingText: {
+    fontSize: 50,
+    fontWeight: '500'
+  },
+  profileInfoCard: {
+    borderWidth: 1,
+    padding: 10,
+    borderColor: '#d62828',
+    borderRadius: 20
+  },
+  profileInfoCardHeading: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  profileInfoCardText: {
+    fontSize: 20
+  }
 });
