@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, ActivityIndicator, StyleSheet, SafeAreaView} from 'react-native';
+import {View, Text, ActivityIndicator, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import signout from '../../firebase/functions';
 import auth from '@react-native-firebase/auth';
 import {Searchbar} from 'react-native-paper';
@@ -7,9 +7,13 @@ import {Searchbar} from 'react-native-paper';
 import {Avatar, Button, Title, Card, IconButton} from 'react-native-paper';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
+import ReastaurantExpanded from '../../components/restaurantExpand';
+
 class ExploreScreen extends Component {
     state = {
         search: '',
+        modalVisable: false,
+        activeRestaurant: null,
         restaurants: [
           {
             id: "1",
@@ -50,16 +54,22 @@ class ExploreScreen extends Component {
         ]
     };
 
- 
+    restaurantSelect = (data) => {
+      this.setState({ activeRestaurant: data});
+      this.setModalVisible(true);
+    };
 
     updateSearch = (search) => {
         this.setState({search})
     };
 
     renderItem = ({ item }) => (
-      <Item title={item.name} />
+      <Item title={item.name} pressFunction={this.restaurantSelect}/>
     );
 
+    setModalVisible = (v) => {
+      this.setState({ modalVisable: v });
+    };
 
   render() {
     return (
@@ -69,6 +79,9 @@ class ExploreScreen extends Component {
           value={this.state.search}
           onChangeText={this.updateSearch}
           />
+          <ReastaurantExpanded visible={this.state.modalVisable} data={this.state.activeRestaurant} onPress={() => { this.setModalVisible(false); }} >
+
+          </ReastaurantExpanded>
             <FlatList
             data={this.state.restaurants}
             numColumns="2"
@@ -81,10 +94,10 @@ class ExploreScreen extends Component {
   }
 }
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
+const Item = ({ title, pressFunction }) => (
+  <TouchableOpacity style={styles.item} onPress={() => {pressFunction(title)}}>
     <Text style={styles.title}>{title}</Text>
-  </View>
+  </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
@@ -101,7 +114,7 @@ const styles = StyleSheet.create({
   },
 
   list: {
-    paddingTop: 20,
+    marginTop: 20,
   },
 
   container: {
