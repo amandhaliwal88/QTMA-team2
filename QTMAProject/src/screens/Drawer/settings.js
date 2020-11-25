@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, ActivityIndicator} from 'react-native';
+import {View, Text, ActivityIndicator, Alert} from 'react-native';
 import {styles} from '../../styles/styles.js';
 import signout from '../../firebase/functions';
 import auth from '@react-native-firebase/auth';
@@ -12,15 +12,53 @@ class SettingsScreen extends Component {
       <View style={{flex: 1, margin: 25, justifyContent: 'space-between'}}>
         <View style={styles.profileHeading}>
           <Text style={styles.profileHeadingText}>Hi {'Max'}.</Text>
-          <IconButton icon="account-circle" color="#000000" size={45} onPress={() => console.log('Account')} />
+          <IconButton
+            icon="account-circle"
+            color="#000000"
+            size={45}
+            onPress={() => console.log('Account')}
+            disabled={true}
+          />
         </View>
-        <IconButton icon="qrcode-scan" color="#000000" size={150} style={{alignSelf:'center'}} onPress={() => console.log('QR Code')} />
+        <IconButton
+          icon="qrcode-scan"
+          color="#000000"
+          size={150}
+          style={{alignSelf:'center'}}
+          onPress={() => console.log('QR Code')}
+        />
         <View style={styles.profileInfoCard}>
           <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
             <Text style={styles.profileInfoCardHeading}>Contact Information:</Text>
             <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-              <IconButton icon="pencil" color="#000000" size={25} onPress={() => console.log('Contact information edit')} />
-              <IconButton icon="help-circle-outline" color="#000000" size={25} onPress={() => console.log('Contact information help')} />
+              <IconButton
+                icon="pencil"
+                color="#000000"
+                size={25}
+                onPress={() => Alert.alert(
+                  "Edit Contact Information",
+                  "Edit contact information here.",
+                  [
+                    { text: "OK", onPress: () => console.log("OK Pressed") }
+                  ],
+                  { cancelable: false }
+                  )
+                }
+              />
+              <IconButton
+                icon="help-circle-outline"
+                color="#000000"
+                size={25}
+                onPress={() => Alert.alert(
+                  "Contact Information Help",
+                  "Your contact information will be stored and be used for contact tracing.",
+                  [
+                    { text: "OK", onPress: () => console.log("OK Pressed") }
+                  ],
+                  { cancelable: false }
+                  )
+                }
+              />
             </View>
           </View>
           <Text style={styles.profileInfoCardText}>Max Eisen</Text>
@@ -31,7 +69,20 @@ class SettingsScreen extends Component {
         <View style={styles.profileInfoCard}>
           <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
             <Text style={styles.profileInfoCardHeading}>Recent locations:</Text>
-              <IconButton icon="help-circle-outline" color="#000000"size={25} onPress={() => console.log('Recent locations help')} />
+              <IconButton
+                icon="help-circle-outline"
+                color="#000000"
+                size={25}
+                onPress={() => Alert.alert(
+                  "Recent Locations Help",
+                  "The recent locations you've visited are stored here.",
+                  [
+                    { text: "OK", onPress: () => console.log("OK Pressed") }
+                  ],
+                  { cancelable: false }
+                  )
+                }
+              />
           </View>
           <Text style={styles.profileInfoCardText}>Lone Star Texas Grill</Text>
           <Text style={styles.profileInfoCardText}>Burger King</Text>
