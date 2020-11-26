@@ -13,43 +13,65 @@ class ExploreScreen extends Component {
     state = {
         search: '',
         modalVisable: false,
-        activeRestaurant: null,
+        activeRestaurant: { //need defaults here to avoid rendering error
+          name:"",
+          address:"",
+          price:""
+        },
         restaurants: [
           {
             id: "1",
             name: "McDonald's",
+            address: "100 placeholder st.",
+            price: "$"
           },
           {
             id: "2",
             name: "Sima Sushi",
+            address: "100 placeholder st.",
+            price: "$$"
           },
           {
             id: "3",
             name: "Lone Star Texas Grill",
+            address: "100 placeholder st.",
+            price: "$$$"
           },
           {
             id: "4",
             name: "Stooley's",
+            address: "100 placeholder st.",
+            price: "$"
           },
           {
             id: "5",
             name: "The Brass",
+            address: "100 placeholder st.",
+            price: "$$"
           },
           {
             id: "6",
             name: "Kpop Sub Sushi",
+            address: "100 placeholder st.",
+            price: "$"
           },
           {
             id: "7",
             name: "Quesada",
+            address: "100 placeholder st.",
+            price: "$"
           },
           {
             id: "8",
             name: "Royal Angkor",
+            address: "100 placeholder st.",
+            price: "$$"
           },
           {
             id: "9",
             name: "Silver Wok",
+            address: "100 placeholder st.",
+            price: "$"
           }
         ]
     };
@@ -64,7 +86,7 @@ class ExploreScreen extends Component {
     };
 
     renderItem = ({ item }) => (
-      <Item title={item.name} pressFunction={this.restaurantSelect}/>
+      <Item data={item} pressFunction={this.restaurantSelect}/>
     );
 
     setModalVisible = (v) => {
@@ -94,9 +116,9 @@ class ExploreScreen extends Component {
   }
 }
 
-const Item = ({ title, pressFunction }) => (
-  <TouchableOpacity style={styles.item} onPress={() => {pressFunction(title)}}>
-    <Text style={styles.title}>{title}</Text>
+const Item = ({ data, pressFunction }) => (
+  <TouchableOpacity style={styles.item} onPress={() => {pressFunction(data)}}>
+    <Text style={styles.title}>{data.name}</Text>
   </TouchableOpacity>
 );
 
