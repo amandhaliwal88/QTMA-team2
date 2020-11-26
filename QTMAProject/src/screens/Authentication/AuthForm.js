@@ -265,9 +265,16 @@ export default withFormik({
   },
 
   handleSubmit: (values, {props}) => {
-    props.authMode === 'signup' ? props.signup(values)
-    : props.authMode === 'passwordReset' ? props.passwordReset(values)
-    : props.login(values)
+    if(props.authMode === 'login'){
+      props.login(values);
+    }
+    else if(props.authMode === 'signup'){
+      props.switchAuthMode('login'); //reset back to login screen since user needs to verify email after creation
+      props.signup(values);
+    }
+    else if (props.authMode === 'passwordReset'){
+      props.passwordReset(values)
+    }
   },
 })(AuthForm);
 
