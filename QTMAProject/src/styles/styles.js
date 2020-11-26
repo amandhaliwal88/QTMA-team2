@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    //alignItems: 'flex-start',
     marginTop: 30,
   },
   image: {
@@ -47,4 +47,27 @@ export const styles = StyleSheet.create({
   loading: {
     marginTop: 300,
   },
+
+  profileHeading: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  profileHeadingText: {
+    fontSize: 50,
+    fontWeight: '500'
+  },
+  profileInfoCard: {
+    borderWidth: 1,
+    padding: 10,
+    borderColor: '#d62828',
+    borderRadius: 20
+  },
+  profileInfoCardHeading: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  profileInfoCardText: {
+    fontSize: 20
+  }
 });

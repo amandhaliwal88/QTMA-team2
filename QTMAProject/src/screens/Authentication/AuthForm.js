@@ -1,5 +1,7 @@
 import React from 'react';
-import {withFormik} from 'formik';
+import {Formik, withFormik} from 'formik';
+import { Alert } from "react-native";
+
 import {
   View,
   Text,
@@ -76,6 +78,7 @@ const inputStyle = {
 }
 
 const AuthForm = (props) => {
+  
   displayLogin = (
     <LinearGradient
           colors={['#ff5242', '#f5841b' ]}
@@ -108,8 +111,6 @@ const AuthForm = (props) => {
         color="white">
         Login
       </Button>
-    
-     
         <Text style={newTitle}>
           New to leopard?
         </Text>
@@ -121,10 +122,26 @@ const AuthForm = (props) => {
           Sign Up
         </Button>
 
-
-
         <Text style={{marginBottom:400}}>.</Text>
         </LinearGradient>
+      <TouchableOpacity
+        onPress={() => props.switchAuthMode('signup')}
+        style={styles.authSwitch}>
+        <Text style={styles.signUpButton}>
+          New to the boiler plate?{' '}
+          <Text style={{color: '#1e90ff'}}>SignUp</Text>
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => props.switchAuthMode('passwordReset')}
+        style={styles.authSwitch}>
+        <Text style={styles.passwordResetButton}>
+          Forgot your password? {' '}
+          <Text style={{color:'#1e90ff'}}>Recover Password</Text>
+        </Text>
+        </TouchableOpacity>
+    </View>
   );
 
   displayRegister = (
@@ -151,6 +168,7 @@ const AuthForm = (props) => {
         label="Email"
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('email', text)}></TextInput>
+      <Text>{props.errors.email}</Text>
       <TextInput
         style={inputText}
         underlineColor="white"
@@ -161,6 +179,8 @@ const AuthForm = (props) => {
         onChangeText={(text) =>
           props.setFieldValue('password', text)
         }></TextInput>
+      <Text>{props.errors.password}</Text>
+
       <TextInput
         style={inputText}
         underlineColor="white"
@@ -169,6 +189,8 @@ const AuthForm = (props) => {
       
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('rePWD', text)}></TextInput>
+      <Text>{props.errors.rePWD}</Text>
+
       <Button
         style={styles.authButton}
         mode="outlined"
@@ -176,8 +198,47 @@ const AuthForm = (props) => {
         color="white">
         Sign Up
       </Button>
-      <Text style={newTitle}>
-          Already have an account?
+      <TouchableOpacity
+        onPress={() => props.switchAuthMode('login')}
+        style={styles.authSwitch}>
+        <Text style={styles.signUpButton}>
+          Already Have an Account? <Text style={{color: '#1e90ff'}}>Login</Text>
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+
+  displayPasswordReset = (
+    <View style={styles.form}>
+      <Text style={styles.greeting}>{'QTMA Boiler Plate.'}</Text>
+      <View style={styles.logo}>
+        <Image
+          source={require('../../assets/QTMA_SB.png')}
+          style={styles.image}
+        />
+      </View>
+
+      <TextInput
+        style={styles.authInput}
+        mode="outlined"
+        label="Email"
+        theme={{
+          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
+        }}
+        autoCapitalize="none"
+        onChangeText={(text) => props.setFieldValue('email', text)}></TextInput>
+      <Button
+        style={styles.authButton}
+        mode="outlined"
+        onPress={() => props.handleSubmit()}
+        color="#1e90ff">
+        Recover Password
+      </Button>
+      <TouchableOpacity
+        onPress={() => props.switchAuthMode('login')}
+        style={styles.authSwitch}>
+        <Text style={styles.signUpButton}>
+          Already Have an Account? <Text style={{color: '#1e90ff'}}>Login</Text>
         </Text>
           <Button
           style={styles.authButton}
@@ -192,7 +253,9 @@ const AuthForm = (props) => {
 
   return (
     <ScrollView>
-      {props.authMode === 'signup' ? displayRegister : displayLogin}
+      {props.authMode === 'signup' ? displayRegister
+      : props.authMode === 'passwordReset' ? displayPasswordReset
+      : displayLogin}
     </ScrollView>
   );
 };
@@ -219,12 +282,19 @@ export default withFormik({
     } else if (values.password.length < 8) {
       errors.password = 'Password must be longer than 8 characters';
     }
+
+    if (values.rePWD != values.password){
+      errors.rePWD = 'Passwords must match' // must check if passwords match
+    }
     return errors;
   },
-
   handleSubmit: (values, {props}) => {
+    props.authMode === 'login' ? props.login(values)
+    : props.authMode === 'signup' ? props.signup(values)
+    : props.passwordReset(values);
     props.authMode === 'login' ? props.login(values) : props.signup(values);
   },
+  
 })(AuthForm);
 
 // validationSchema: (props) => yup.object().shape({
