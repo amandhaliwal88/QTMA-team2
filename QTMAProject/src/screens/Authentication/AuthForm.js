@@ -81,7 +81,7 @@ const AuthForm = (props) => {
           colors={['#ff5242', '#f5841b' ]}
           style={mystyle}
         >
-      <Text source={require('../../assets/Palanquin-Regular.ttf')} style={leopardTitle}>{'leopard.'}</Text>
+      <Text style={leopardTitle}>{'leopard.'}</Text>
       <TextInput style={inputText}
         underlineColor="white"
         color="white"
@@ -132,7 +132,7 @@ const AuthForm = (props) => {
           colors={['#ff5242', '#f5841b' ]}
           style={mystyle}
         >
-      <Text source={require('../../assets/Palanquin-Regular.ttf')} style={leopardTitle}>{'leopard.'}</Text>
+      <Text style={leopardTitle}>{'leopard.'}</Text>
 
       <TextInput
         style={inputText}
