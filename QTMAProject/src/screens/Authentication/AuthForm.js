@@ -59,13 +59,22 @@ const AuthForm = (props) => {
         Login
       </Button>
       <TouchableOpacity
-        onPress={() => props.switchAuthMode()}
+        onPress={() => props.switchAuthMode('signup')}
         style={styles.authSwitch}>
         <Text style={styles.signUpButton}>
           New to the boiler plate?{' '}
           <Text style={{color: '#1e90ff'}}>SignUp</Text>
         </Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => props.switchAuthMode('passwordReset')}
+        style={styles.authSwitch}>
+        <Text style={styles.passwordResetButton}>
+          Forgot your password? {' '}
+          <Text style={{color:'#1e90ff'}}>Recover Password</Text>
+        </Text>
+        </TouchableOpacity>
     </View>
   );
 
@@ -134,7 +143,43 @@ const AuthForm = (props) => {
         Sign Up
       </Button>
       <TouchableOpacity
-        onPress={() => props.switchAuthMode()}
+        onPress={() => props.switchAuthMode('login')}
+        style={styles.authSwitch}>
+        <Text style={styles.signUpButton}>
+          Already Have an Account? <Text style={{color: '#1e90ff'}}>Login</Text>
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+
+  displayPasswordReset = (
+    <View style={styles.form}>
+      <Text style={styles.greeting}>{'QTMA Boiler Plate.'}</Text>
+      <View style={styles.logo}>
+        <Image
+          source={require('../../assets/QTMA_SB.png')}
+          style={styles.image}
+        />
+      </View>
+
+      <TextInput
+        style={styles.authInput}
+        mode="outlined"
+        label="Email"
+        theme={{
+          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
+        }}
+        autoCapitalize="none"
+        onChangeText={(text) => props.setFieldValue('email', text)}></TextInput>
+      <Button
+        style={styles.authButton}
+        mode="outlined"
+        onPress={() => props.handleSubmit()}
+        color="#1e90ff">
+        Recover Password
+      </Button>
+      <TouchableOpacity
+        onPress={() => props.switchAuthMode('login')}
         style={styles.authSwitch}>
         <Text style={styles.signUpButton}>
           Already Have an Account? <Text style={{color: '#1e90ff'}}>Login</Text>
@@ -145,7 +190,9 @@ const AuthForm = (props) => {
 
   return (
     <ScrollView>
-      { props.authMode === 'signup' ? displayRegister : displayLogin}
+      {props.authMode === 'signup' ? displayRegister
+      : props.authMode === 'passwordReset' ? displayPasswordReset
+      : displayLogin}
     </ScrollView>
   );
 };
@@ -179,8 +226,10 @@ export default withFormik({
     return errors;
   },
   handleSubmit: (values, {props}) => {
+    props.authMode === 'login' ? props.login(values)
+    : props.authMode === 'signup' ? props.signup(values)
+    : props.passwordReset(values);
     props.authMode === 'login' ? props.login(values) : props.signup(values);
-  
   },
   
 })(AuthForm);
