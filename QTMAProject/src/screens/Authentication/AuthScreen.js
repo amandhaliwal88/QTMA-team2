@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthForm from './AuthForm';
-import { login, signup, subscribeToAuthChanges } from '../../firebase/functions';
+import { login, signup, passwordReset, subscribeToAuthChanges } from '../../firebase/functions';
 
 
 class AuthScreen extends Component {
@@ -19,9 +19,9 @@ class AuthScreen extends Component {
     }
   }
 
-  switchAuthMode = () => {
+  switchAuthMode = (newMode) => {
     this.setState(prevState => ({
-      authMode: prevState.authMode === 'login' ? 'signup' : 'login'
+      authMode: newMode
     }));
   }
 
@@ -30,6 +30,7 @@ class AuthScreen extends Component {
       <AuthForm
         login={login}
         signup={signup}
+        passwordReset={passwordReset}
         authMode={this.state.authMode}
         switchAuthMode={this.switchAuthMode}
       />

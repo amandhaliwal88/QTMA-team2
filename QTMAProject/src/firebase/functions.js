@@ -52,6 +52,13 @@ export function signup({ email, password, displayName }) {
     })
 }
 
+export function passwordReset({ email }) {
+  auth()
+    .sendPasswordResetEmail(email)
+    .then((value) => console.log(value))
+
+}
+
 export function subscribeToAuthChanges(authStateChanged) {
   auth().onAuthStateChanged((user) => {
     authStateChanged(user);
