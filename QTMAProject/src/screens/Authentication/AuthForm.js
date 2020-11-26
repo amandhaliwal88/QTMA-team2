@@ -1,7 +1,5 @@
 import React from 'react';
-import {Formik, withFormik} from 'formik';
-import { Alert } from "react-native";
-
+import {withFormik} from 'formik';
 import {
   View,
   Text,
@@ -15,38 +13,90 @@ import {
 import * as yup from 'yup';
 import {styles} from '../../styles/styles';
 import {TextInput, Button} from 'react-native-paper';
+import LinearGradient from 'react-native-linear-gradient'
+
+const mystyle={
+  width: '100%',
+  height: '100%',
+  resizeMode: 'contain',
+  flex: 1
+}
+
+
+const leopardTitle={
+  textAlign: 'center',
+  color: 'white',
+  fontSize: 30,
+  fontFamily: 'Avenir',
+  marginTop: 200,
+  alignSelf: 'center',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlignVertical: 'center',
+  alignContent: 'center',
+}
+
+const newTitle={
+  textAlign: 'center',
+  color: 'black',
+  fontSize: 18,
+  marginTop: 15,
+  alignSelf: 'center',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlignVertical: 'center',
+  alignContent: 'center',
+}
+
+
+const inputText = {
+  backgroundColor: 'transparent',
+  marginTop: 10,
+  color: 'white',
+  
+}
+
+const linearGrad = {
+  flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+}
+
+const passwordContainer = {
+  flexDirection: 'row',
+  borderBottomWidth: 1,
+  borderColor: '#000',
+  paddingBottom: 10,
+  height: 50
+}
+
+const inputStyle = {
+  flex: 1,
+  height: 100
+}
 
 const AuthForm = (props) => {
-  
   displayLogin = (
-    <View style={styles.form}>
-      <Text style={styles.greeting}>{'QTMA Boiler Plate.'}</Text>
-      <View style={styles.logo}>
-        <Image
-          source={require('../../assets/QTMA_SB.png')}
-          style={styles.image}
-        />
-      </View>
-
-      <TextInput
-        style={styles.authInput}
-        mode="outlined"
+    <LinearGradient
+          colors={['#ff5242', '#f5841b' ]}
+          style={mystyle}
+        >
+      <Text style={leopardTitle}>{'leopard.'}</Text>
+      <TextInput style={inputText}
+        underlineColor="white"
+        color="white"
+        placeholderTextColor="white"
         label="Email"
-        theme={{
-          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
-        }}
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('email', text)}></TextInput>
 
       <TextInput
-        style={styles.authInput}
-        mode="outlined"
+        style={inputText}
         label="Password"
-        theme={{
-          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
-        }}
         secureTextEntry={true}
         autoCapitalize="none"
+        underlineColor="white"
+
         onChangeText={(text) =>
           props.setFieldValue('password', text)
         }></TextInput>
@@ -55,42 +105,46 @@ const AuthForm = (props) => {
         style={styles.authButton}
         mode="outlined"
         onPress={() => props.handleSubmit()}
-        color="#1e90ff">
+        color="white">
         Login
       </Button>
-      <TouchableOpacity
-        onPress={() => props.switchAuthMode('signup')}
-        style={styles.authSwitch}>
-        <Text style={styles.signUpButton}>
-          New to the boiler plate?{' '}
-          <Text style={{color: '#1e90ff'}}>SignUp</Text>
+    
+     
+        <Text style={newTitle}>
+          New to leopard?
         </Text>
-      </TouchableOpacity>
+          <Button
+          style={styles.authButton}
+          mode="outlined"
+          onPress={() => props.switchAuthMode('signup')}
+          color="white">
+          Sign Up
+        </Button>
 
-      <TouchableOpacity
+        <TouchableOpacity
         onPress={() => props.switchAuthMode('passwordReset')}
         style={styles.authSwitch}>
         <Text style={styles.passwordResetButton}>
           Forgot your password? {' '}
-          <Text style={{color:'#1e90ff'}}>Recover Password</Text>
+          <Text style={{color:'#0000EE'}}>Recover Password</Text>
         </Text>
         </TouchableOpacity>
-    </View>
+
+
+        <Text style={{marginBottom:400}}></Text>
+        </LinearGradient>
   );
 
   displayRegister = (
-    <View style={styles.form}>
-      <Text style={styles.greeting}>{'QTMA Boiler Plate.'}</Text>
-      <View style={styles.logo}>
-        <Image
-          source={require('../../assets/QTMA_SB.png')}
-          style={styles.image}
-        />
-      </View>
+    <LinearGradient
+          colors={['#ff5242', '#f5841b' ]}
+          style={mystyle}
+        >
+      <Text style={leopardTitle}>{'leopard.'}</Text>
 
       <TextInput
-        style={styles.authInput}
-        mode="outlined"
+        style={inputText}
+        underlineColor="white"
         label="Name"
         theme={{
           colors: {primary: '#1e90ff', underlineColor: 'transparent'},
@@ -100,92 +154,80 @@ const AuthForm = (props) => {
           props.setFieldValue('displayName', text)
         }></TextInput>
       <TextInput
-        style={styles.authInput}
-        mode="outlined"
+        style={inputText}
+        underlineColor="white"
         label="Email"
-        theme={{
-          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
-        }}
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('email', text)}></TextInput>
-      <Text>{props.errors.email}</Text>
       <TextInput
-        style={styles.authInput}
-        mode="outlined"
+        style={inputText}
+        underlineColor="white"
         label="Password"
         secureTextEntry={true}
-        theme={{
-          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
-        }}
+   
         autoCapitalize="none"
         onChangeText={(text) =>
           props.setFieldValue('password', text)
         }></TextInput>
-      <Text>{props.errors.password}</Text>
-
       <TextInput
-        style={styles.authInput}
-        mode="outlined"
+        style={inputText}
+        underlineColor="white"
         label=" Re-Enter Password"
         secureTextEntry={true}
-        theme={{
-          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
-        }}
+      
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('rePWD', text)}></TextInput>
-      <Text>{props.errors.rePWD}</Text>
-
       <Button
         style={styles.authButton}
         mode="outlined"
         onPress={() => props.handleSubmit()}
-        color="#1e90ff">
+        color="white">
         Sign Up
       </Button>
       <TouchableOpacity
-        onPress={() => props.switchAuthMode('login')}
+        onPress={() => props.switchAuthMode()}
         style={styles.authSwitch}>
-        <Text style={styles.signUpButton}>
-          Already Have an Account? <Text style={{color: '#1e90ff'}}>Login</Text>
+        <Text style={styles.passwordResetButton}>
+          Already have an account? {' '}
+          <Text style={{color:'#0000EE'}}>Login</Text>
         </Text>
-      </TouchableOpacity>
-    </View>
+        </TouchableOpacity>
+      <Text style={{marginBottom:300}}>.</Text>
+      </LinearGradient>
   );
 
   displayPasswordReset = (
-    <View style={styles.form}>
-      <Text style={styles.greeting}>{'QTMA Boiler Plate.'}</Text>
-      <View style={styles.logo}>
-        <Image
-          source={require('../../assets/QTMA_SB.png')}
-          style={styles.image}
-        />
-      </View>
+    <LinearGradient
+    colors={['#ff5242', '#f5841b' ]}
+    style={mystyle}
+    >
+      <Text style={leopardTitle}>{'leopard.'}</Text>
 
       <TextInput
-        style={styles.authInput}
-        mode="outlined"
+        style={inputText}
+        underlineColor="white"
         label="Email"
-        theme={{
-          colors: {primary: '#1e90ff', underlineColor: 'transparent'},
-        }}
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('email', text)}></TextInput>
       <Button
         style={styles.authButton}
         mode="outlined"
         onPress={() => props.handleSubmit()}
-        color="#1e90ff">
+        color="white">
         Recover Password
       </Button>
+
       <TouchableOpacity
-        onPress={() => props.switchAuthMode('login')}
+        onPress={() => props.switchAuthMode()}
         style={styles.authSwitch}>
-        <Text style={styles.signUpButton}>
-          Already Have an Account? <Text style={{color: '#1e90ff'}}>Login</Text>
+        <Text style={styles.passwordResetButton}>
+          Remembered your password? {' '}
+          <Text style={{color:'#0000EE'}}>Login</Text>
         </Text>
-      </TouchableOpacity>
-    </View>
+        </TouchableOpacity>
+
+      <Text style={{marginBottom:600}}></Text>
+    </LinearGradient>
   );
 
   return (
@@ -219,19 +261,14 @@ export default withFormik({
     } else if (values.password.length < 8) {
       errors.password = 'Password must be longer than 8 characters';
     }
-
-    if (values.rePWD != values.password){
-      errors.rePWD = 'Passwords must match' // must check if passwords match
-    }
     return errors;
   },
+
   handleSubmit: (values, {props}) => {
-    props.authMode === 'login' ? props.login(values)
-    : props.authMode === 'signup' ? props.signup(values)
-    : props.passwordReset(values);
-    props.authMode === 'login' ? props.login(values) : props.signup(values);
+    props.authMode === 'signup' ? props.signup(values)
+    : props.authMode === 'passwordReset' ? props.passwordReset(values)
+    : props.login(values)
   },
-  
 })(AuthForm);
 
 // validationSchema: (props) => yup.object().shape({
