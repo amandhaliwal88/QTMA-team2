@@ -1,5 +1,7 @@
 import React from 'react';
-import {withFormik} from 'formik';
+import {Formik, withFormik} from 'formik';
+import { Alert } from "react-native";
+
 import {
   View,
   Text,
@@ -15,6 +17,7 @@ import {styles} from '../../styles/styles';
 import {TextInput, Button} from 'react-native-paper';
 
 const AuthForm = (props) => {
+  
   displayLogin = (
     <View style={styles.form}>
       <Text style={styles.greeting}>{'QTMA Boiler Plate.'}</Text>
@@ -96,6 +99,7 @@ const AuthForm = (props) => {
         }}
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('email', text)}></TextInput>
+      <Text>{props.errors.email}</Text>
       <TextInput
         style={styles.authInput}
         mode="outlined"
@@ -108,6 +112,8 @@ const AuthForm = (props) => {
         onChangeText={(text) =>
           props.setFieldValue('password', text)
         }></TextInput>
+      <Text>{props.errors.password}</Text>
+
       <TextInput
         style={styles.authInput}
         mode="outlined"
@@ -118,6 +124,8 @@ const AuthForm = (props) => {
         }}
         autoCapitalize="none"
         onChangeText={(text) => props.setFieldValue('rePWD', text)}></TextInput>
+      <Text>{props.errors.rePWD}</Text>
+
       <Button
         style={styles.authButton}
         mode="outlined"
@@ -137,7 +145,7 @@ const AuthForm = (props) => {
 
   return (
     <ScrollView>
-      {props.authMode === 'signup' ? displayRegister : displayLogin}
+      { props.authMode === 'signup' ? displayRegister : displayLogin}
     </ScrollView>
   );
 };
@@ -164,12 +172,17 @@ export default withFormik({
     } else if (values.password.length < 8) {
       errors.password = 'Password must be longer than 8 characters';
     }
+
+    if (values.rePWD != values.password){
+      errors.rePWD = 'Passwords must match' // must check if passwords match
+    }
     return errors;
   },
-
   handleSubmit: (values, {props}) => {
     props.authMode === 'login' ? props.login(values) : props.signup(values);
+  
   },
+  
 })(AuthForm);
 
 // validationSchema: (props) => yup.object().shape({
