@@ -31,7 +31,9 @@ export default function App() {
 
   // Handle user state changes
   function onAuthStateChanged(user) {
-    setUser(user);
+    if(user == null || user.emailVerified){
+       setUser(user)
+    }
     if (initializing) setInitializing(false);
   }
 
