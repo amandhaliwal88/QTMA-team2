@@ -16,67 +16,165 @@ class ExploreScreen extends Component {
         activeRestaurant: { //need defaults here to avoid rendering error
           name:"",
           address:"",
-          price:""
+          price:"",
+          times: []
         },
         restaurants: [
           {
             id: "1",
             name: "McDonald's",
             address: "100 placeholder st.",
-            price: "$"
+            price: "$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "2",
             name: "Sima Sushi",
             address: "100 placeholder st.",
-            price: "$$"
+            price: "$$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "3",
             name: "Lone Star Texas Grill",
             address: "100 placeholder st.",
-            price: "$$$"
+            price: "$$$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "4",
             name: "Stooley's",
             address: "100 placeholder st.",
-            price: "$"
+            price: "$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "5",
             name: "The Brass",
             address: "100 placeholder st.",
-            price: "$$"
+            price: "$$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "6",
             name: "Kpop Sub Sushi",
             address: "100 placeholder st.",
-            price: "$"
+            price: "$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "7",
             name: "Quesada",
             address: "100 placeholder st.",
-            price: "$"
+            price: "$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "8",
             name: "Royal Angkor",
             address: "100 placeholder st.",
-            price: "$$"
+            price: "$$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           },
           {
             id: "9",
             name: "Silver Wok",
             address: "100 placeholder st.",
-            price: "$"
+            price: "$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
+          },
+          {
+            id: "10",
+            name: "House of Donair",
+            address: "100 placeholder st.",
+            price: "$",
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ]
           }
         ]
     };
 
     restaurantSelect = (data) => {
+      console.log (data.times.filter(res=>res.label).map(ele=>ele.label))
       this.setState({ activeRestaurant: data});
       this.setModalVisible(true);
     };
