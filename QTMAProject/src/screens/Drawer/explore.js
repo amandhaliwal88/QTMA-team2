@@ -13,18 +13,21 @@ class ExploreScreen extends Component {
     state = {
         search: '',
         modalVisable: false,
-        activeRestaurant: { //need defaults here to avoid rendering error
-          name:"",
-          address:"",
-          price:"",
-          times: []
-        },
         restaurants: [
           {
             id: "1",
             name: "McDonald's",
             address: "100 placeholder st.",
             price: "$",
+            hours: [
+              {value: "24 Hours", label: 'Monday',},
+              {value: "24 Hours", label: 'Tuesday',},
+              {value: "24 Hours", label: 'Wednesday',},
+              {value: "24 Hours", label: 'Thursday',},
+              {value: "24 Hours", label: 'Friday',},
+              {value: "24 Hours", label: 'Saturday',},
+              {value: "24 Hours", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -40,6 +43,15 @@ class ExploreScreen extends Component {
             name: "Sima Sushi",
             address: "100 placeholder st.",
             price: "$$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -55,6 +67,15 @@ class ExploreScreen extends Component {
             name: "Lone Star Texas Grill",
             address: "100 placeholder st.",
             price: "$$$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -70,6 +91,15 @@ class ExploreScreen extends Component {
             name: "Stooley's",
             address: "100 placeholder st.",
             price: "$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -85,6 +115,15 @@ class ExploreScreen extends Component {
             name: "The Brass",
             address: "100 placeholder st.",
             price: "$$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -100,6 +139,15 @@ class ExploreScreen extends Component {
             name: "Kpop Sub Sushi",
             address: "100 placeholder st.",
             price: "$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -115,6 +163,15 @@ class ExploreScreen extends Component {
             name: "Quesada",
             address: "100 placeholder st.",
             price: "$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -130,6 +187,15 @@ class ExploreScreen extends Component {
             name: "Royal Angkor",
             address: "100 placeholder st.",
             price: "$$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -145,6 +211,15 @@ class ExploreScreen extends Component {
             name: "Silver Wok",
             address: "100 placeholder st.",
             price: "$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -160,6 +235,15 @@ class ExploreScreen extends Component {
             name: "House of Donair",
             address: "100 placeholder st.",
             price: "$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
             times: [
               {value: 50, label: 'Monday',},
               {value: 10, label: 'Tuesday',},
@@ -174,7 +258,6 @@ class ExploreScreen extends Component {
     };
 
     restaurantSelect = (data) => {
-      console.log (data.times.filter(res=>res.label).map(ele=>ele.label))
       this.setState({ activeRestaurant: data});
       this.setModalVisible(true);
     };
