@@ -31,6 +31,7 @@ export const styles = StyleSheet.create({
   },
   card: {
     marginTop: 20,
+    zIndex: -1
   },
   avatar: {
     color: 'blue',
@@ -47,4 +48,13 @@ export const styles = StyleSheet.create({
   loading: {
     marginTop: 300,
   },
+  homeScreenImage: {
+    // padding: 20,
+    marginTop: 20,
+    flex: 1,
+    zIndex: 1,
+    // width: '45%',
+    // height: '50%',
+
+  }
 });
