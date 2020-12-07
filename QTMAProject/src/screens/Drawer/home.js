@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, ScrollView, Image} from 'react-native';
+import {View, Text, ScrollView, Image, ImageBackground} from 'react-native';
 import {styles} from '../../styles/styles';
 import signout from '../../firebase/functions';
 import auth from '@react-native-firebase/auth';
@@ -7,16 +7,20 @@ import {Appbar, DataTable} from 'react-native-paper';
 import {Avatar, Button, Menu, Divider, Provider, Title, Paragraph, Card} from 'react-native-paper';
 import HomeCard from '../../components/card';
 import { BarChart, Grid ,XAxis} from 'react-native-svg-charts'
+import Ionicon from 'react-native-vector-icons/Ionicons'
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
+
+
 
 /**
  * * To use graphs we are using react-native-svg : https://github.com/react-native-svg/react-native-svg#automatically
  * * run "yarn add react-native-svg" in project directory
  * * then run "cd ios && pod install"
- * 
  */
 
 var data = {
-  mcdonalds:"McDonalds",
+  mcdonalds:"McDonald's",
   mcdonaldsURL:"https://www.incimages.com/uploaded_files/image/1920x1080/getty_1026535662_2000133316537670495_415913.jpg",
   
   pizzaStudio:"Pizza Studio",
@@ -83,29 +87,18 @@ var houseOfDonairTimes = [
             ]
 
 
-
-/**
- * ! When the sort button is clicked, the dropdown menu appears behind the restaurant card 
- * * I already tried to fuck with the zIndex of every component on the page but it did not work
- * TODO: Fix sort button problem (1) --> maybe even just skip this and come back to it?
- * TODO: Add header (2)
- * TODO: Get busy times info (or finesse for demo and fix later) and put image/chart in (3)
- * TODO: Get price info and add it in (4)
- */
-
 class HomeScreen extends Component {
   render () {
     return (
       <ScrollView>
        <View style={styles.form}>
          <Text style={styles.pageTitle}>Home</Text>
-    <SortButton>style={{zIndex:1329}}</SortButton>
-         <RestaurantCard name={data.mcdonalds} url={data.mcdonaldsURL} data={mcdonaldsTimes}/>
-         {/* <RestaurantCard name={data.pizzaStudio} url={data.pizzaStudioURL}/>
-         <RestaurantCard name={data.harveys} url={data.harveysURL}/>
-         <RestaurantCard name={data.tacoBell} url={data.tacoBellURL}/>
-         <RestaurantCard name={data.houseOfDonair} url={data.houseOfDonairURL}/> */}
-         
+         <SortButton>style={{zIndex:1329}}</SortButton>
+         <RestaurantCard name={data.mcdonalds} url={data.mcdonaldsURL}times={[40, 20, 30, 90, 60, 20, 50]} address={'285 Princess St'}/>
+         <RestaurantCard name={data.harveys} url={data.harveysURL} times={[13, 45, 23, 75, 24, 23, 34]} address={'1141 Division St'}/>
+         <RestaurantCard name={data.tacoBell} url={data.tacoBellURL} times={[67, 28, 45, 15, 75, 34, 54]} address={'29 Warne Crescent'}/>
+         <RestaurantCard name={data.houseOfDonair} url={data.houseOfDonairURL} times={[67, 48, 25, 15, 55, 34, 54]} address={'394 Princess St'}/>
+         <RestaurantCard name={data.pizzaStudio} url={data.pizzaStudioURL} times={[40, 30, 20, 60, 90, 20, 50]} address={'356 Princess St'}/> 
        </View>
       </ScrollView>
     );
@@ -115,98 +108,87 @@ class HomeScreen extends Component {
 const RestaurantCard = (props) => {
   return (
     <Card style={styles.card}>
+      <View style={{backgroundColor:'#003049', borderRadius:5, borderWidth:5, borderColor:'#003049'}}>
+
       <Card.Content>
-        <Title>{props.name}</Title>
-        <Paragraph>We are {props.name} and we would love for you to eat here.</Paragraph>
-        {/* <Image source={{uri: props.url,}} style={styles.homeScreenImage} /> */}
         <View>
-          
-          <BarChartExample></BarChartExample>
-          
-          {/* <Card.Cover source={{uri: props.url}} style={( styles.homeScreenImage )} */}
+        <Title style={{color:'#FFFFFF'}}>{props.name}</Title>
         </View>
-        {/* <BarChartExample></BarChartExample> */}
-         {/* <Card.Cover source={{uri: props.url}} style={( styles.homeScreenImage )} */}
-      
       </Card.Content>
-      <Image source={{uri: props.url,}} style={styles.homeScreenImage} />
-    </Card>
-  );
-}
 
-// const BarChartExample = (props) => {
-//   return (
-//     <View>
-//       <BarChart style={{ height: 200, marginLeft: 5, marginRight: 5, marginTop: 25 }} data={props.data.times.filter(res=>res.value).map(ele=>ele.value)} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}>
-//        <Grid />
-//        <XAxis
-//              style={{ paddingTop: 10, marginLeft: 5, marginRight:5 }}
-//              data={props.data.times.filter(res=>res.value).map(ele=>ele.value)}
-//              formatLabel={(value, index) => props.data.times.filter(res=>res.label).map(ele=>ele.label)[index]}
-//              contentInset={{ left: 18, right: 18 }}
-//              svg={{ fontSize: 10, fill: '#FFFFFF' }}/>
-//       </BarChart>
-//     </View>
+{/* This is the image and the bar chart */}
+      <View style={{flexDirection:"column", backgroundColor:'#FFFFFF', borderRadius:10}}>
 
-//   );
+        <View style={{flex:3, flexDirection:"row", alignItems:'center'}}>
 
-// }
-
-// class BarChartExample extends Component {
-//     render() {
-//         const fill = 'rgb(134, 65, 244)'
-//         const data = [50, 10, 40, 65, 24, 30, 16]
- 
-//         return (
-//           <View>
-//             <BarChart style={{ height: 200, marginLeft: 5, marginRight: 5, marginTop: 25 }} data={props.data.times.filter(res=>res.value).map(ele=>ele.value)} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}>
-//              <Grid />
-//              <XAxis
-//                    style={{ paddingTop: 10, marginLeft: 5, marginRight:5 }}
-//                    data={props.data.times.filter(res=>res.value).map(ele=>ele.value)}
-//                    formatLabel={(value, index) => props.data.times.filter(res=>res.label).map(ele=>ele.label)[index]}
-//                    contentInset={{ left: 18, right: 18 }}
-//                    svg={{ fontSize: 10, fill: '#FFFFFF' }}/>
-//             </BarChart>
-//           </View>
-//         )
-//     }
-// }
-
-// class BarChartExample extends Component {
-//     render() {
-//         const fill = 'rgb(134, 65, 244)'
-//         const data = [50, 10, 40, 65, 24, 30, 16]
- 
-//         return (
-//           <View>
-//             <BarChart style={{ height: 200, marginLeft: 5, marginRight: 5, marginTop: 25 }} data={this.props.data.times.filter(res=>res.value).map(ele=>ele.value)} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}>
-//              <Grid />
-//              <XAxis
-//                    style={{ paddingTop: 10, marginLeft: 5, marginRight:5 }}
-//                    data={this.props.data.times.filter(res=>res.value).map(ele=>ele.value)}
-//                    formatLabel={(value, index) => this.props.data.times.filter(res=>res.label).map(ele=>ele.label)[index]}
-//                    contentInset={{ left: 18, right: 18 }}
-//                    svg={{ fontSize: 10, fill: '#FFFFFF' }}/>
-//             </BarChart>
-//           </View>
-//         )
-//     }
-// }
-
-class BarChartExample extends Component {
-    render() {
-        const fill = 'rgb(134, 65, 244)'
-        const data = [50, 10, 40, 65, 24, 30, 16]
-        return (
-          <View>
-            <BarChart style={{ width: 100, height:100 }} data={data} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}>
-                <Grid />
-            </BarChart>
+          <View style={{flex:2, backgroundColor:'#FFFFFF', padding:8, borderRadius:8}}>
+            <Card.Cover source={{uri: props.url}} style={{height:100, borderRadius:10}}/>
           </View>
-        )
-    }
+
+          <View style={{flexDirection:"column",flex:3, backgroundColor:'#FFFFFF'}}>
+            <BarChartExample times={props.times}></BarChartExample>
+          </View>
+
+        </View>
+
+{/* This is the bottom row */}
+        <View style={{flexDirection:"row",flex:1, backgroundColor:'#FFFFFF', padding:5, borderRadius:10}}>
+
+          <View style={{flex:3, flexDirection:"row"}}>
+            <Ionicon name='location' size={20}/>
+          <Paragraph>{props.address}</Paragraph>
+          </View>
+
+          <View style={{flex:1}}>
+            {/* this colour will change to grey or black depending on parking availability */}
+            <MaterialIcon style={{color:'#000000'}}name='local-parking' size={20}/>
+          </View>
+
+          <View style={{flex:1, flexDirection:'row'}}>
+            <FontAwesome style={{padding:2, color:'#D0D0D0'}}name='usd' size={20}/>
+            <FontAwesome style={{padding:2, color:'#D0D0D0'}}name='usd' size={20}/>
+            <FontAwesome style={{padding:2, color:'#000000'}} name='usd' size={20}/>
+          </View>
+          
+        </View>
+        
+      </View>
+
+      </View>
+    </Card>
+  )
 }
+
+const BarChartExample = (props) => {
+  const fill = '#A0B5EE'
+  // const data = [50, 10, 40, 65, 24, 30, 16]
+  const data = props.times;
+  const labels = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+
+  return (
+    <View style={{flex:1}}>
+      <BarChart 
+        style={{ width: 150, height:130, backgroundColor:'#FFFFFF'}} 
+        data={data} 
+        svg={{ fill }} 
+        contentInset={{ top: 30, bottom: 30 }}>
+        <Grid />
+       </BarChart>
+
+       <XAxis
+        style={{flex:1, colour:'#003049', marginBottom:3, marginLeft:0, marginRight:3}}
+        data={data}
+        formatLabel={(value, index) => labels[index]}
+        contentInset={{ left: 10, right: 20 }}
+        svg={{ fontSize:10, fill:'#003049' }}
+       />
+
+    </View> 
+
+  )
+
+}
+
 
 
 const SortButton = () => {
