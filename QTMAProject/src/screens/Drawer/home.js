@@ -163,7 +163,7 @@ const BarChartExample = (props) => {
   const fill = '#A0B5EE'
   // const data = [50, 10, 40, 65, 24, 30, 16]
   const data = props.times;
-  const labels = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+  const labels = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm']
 
   return (
     <View style={{flex:1}}>
@@ -179,8 +179,8 @@ const BarChartExample = (props) => {
         style={{flex:1, colour:'#003049', marginBottom:3, marginLeft:0, marginRight:3}}
         data={data}
         formatLabel={(value, index) => labels[index]}
-        contentInset={{ left: 10, right: 20 }}
-        svg={{ fontSize:10, fill:'#003049' }}
+        contentInset={{ left: 10, right: 29 }}
+        svg={{ fontSize:7, fill:'#003049' }}
        />
 
     </View> 
