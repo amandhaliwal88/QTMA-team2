@@ -17,7 +17,7 @@ class ExploreScreen extends Component {
           {
             id: "1",
             name: "McDonald's",
-            address: "100 placeholder st.",
+            address: "285 Princess Street",
             price: "$",
             hours: [
               {value: "24 Hours", label: 'Monday',},
@@ -41,7 +41,7 @@ class ExploreScreen extends Component {
           {
             id: "2",
             name: "Sima Sushi",
-            address: "100 placeholder st.",
+            address: "66 Princess St",
             price: "$$",
             hours: [
               {value: "12:00 AM - 10:00 PM", label: 'Monday',},
@@ -137,7 +137,7 @@ class ExploreScreen extends Component {
           {
             id: "6",
             name: "Kpop Sub Sushi",
-            address: "100 placeholder st.",
+            address: "481 Princess Street",
             price: "$",
             hours: [
               {value: "12:00 AM - 10:00 PM", label: 'Monday',},
@@ -149,13 +149,13 @@ class ExploreScreen extends Component {
               {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
               ],
             times: [
-              {value: 50, label: 'Monday',},
-              {value: 10, label: 'Tuesday',},
-              {value: 40, label: 'Wednesday',},
-              {value: 95, label: 'Thursday',},
+              {value: 30, label: 'Monday',},
+              {value: 20, label: 'Tuesday',},
+              {value: 50, label: 'Wednesday',},
+              {value: 80, label: 'Thursday',},
               {value: 85, label: 'Friday',},
-              {value: 95, label: 'Saturday',},
-              {value: 85, label: 'Sunday',},
+              {value: 90, label: 'Saturday',},
+              {value: 55, label: 'Sunday',},
               ]
           },
           {
@@ -173,13 +173,13 @@ class ExploreScreen extends Component {
               {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
               ],
             times: [
-              {value: 50, label: 'Monday',},
-              {value: 10, label: 'Tuesday',},
-              {value: 40, label: 'Wednesday',},
-              {value: 95, label: 'Thursday',},
+              {value: 30, label: 'Monday',},
+              {value: 20, label: 'Tuesday',},
+              {value: 50, label: 'Wednesday',},
+              {value: 80, label: 'Thursday',},
               {value: 85, label: 'Friday',},
-              {value: 95, label: 'Saturday',},
-              {value: 85, label: 'Sunday',},
+              {value: 90, label: 'Saturday',},
+              {value: 55, label: 'Sunday',},
               ]
           },
           {
@@ -328,7 +328,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#FFFFFF',
     fontSize: 17,
-    fontFamily: 'Roboto',
+    // fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'bold',
     lineHeight: 20,

@@ -59,7 +59,7 @@ export default class ReastaurantExpanded extends React.Component {
     text:{
       color: '#000000',
       fontSize: 30,
-      fontFamily: 'Roboto',
+      // fontFamily: 'Roboto',
       fontStyle: 'normal',
       fontWeight: 'bold',
       textAlign: 'center'
@@ -68,7 +68,7 @@ export default class ReastaurantExpanded extends React.Component {
       color: '#000000',
       fontSize: 17,
       marginTop: '5%',
-      fontFamily: 'Roboto',
+      // fontFamily: 'Roboto',
       fontStyle: 'normal',
       fontWeight: 'bold',
       textAlign: 'center',
@@ -77,7 +77,7 @@ export default class ReastaurantExpanded extends React.Component {
     closeButton:{
       color: '#000000',
       fontSize: 15,
-      fontFamily: 'Roboto',
+      // fontFamily: 'Roboto',
       fontStyle: 'normal',
       fontWeight: 'bold',
       textAlign: 'center',
