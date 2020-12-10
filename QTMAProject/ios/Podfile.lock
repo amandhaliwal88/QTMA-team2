@@ -394,8 +394,6 @@ PODS:
     - React-Core
   - RNSVG (12.1.0):
     - React
-  - RNSVG (12.1.0):
-    - React
   - RNVectorIcons (7.1.0):
     - React
   - Yoga (1.14.0)
