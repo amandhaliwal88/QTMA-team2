@@ -305,7 +305,7 @@ const Item = ({ data, pressFunction }) => (
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#003049',
+    backgroundColor: '#7D6959',
     borderRadius: 15,
     paddingTop: 70,
     paddingBottom: 80,
