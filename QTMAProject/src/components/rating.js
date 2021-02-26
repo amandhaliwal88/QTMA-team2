@@ -47,7 +47,7 @@ export class RatingDetailed extends Component {
                                 )
                             })}
                             <Pressable onPress={() => this.setModalVisible(!modalVisible)}>
-                                <Text>Hide modal</Text>
+                                <Text style={{alignSelf: 'center', marginTop: 10, borderWidth: 1, padding: 10, borderRadius: 15}}>Done</Text>
                             </Pressable>
                         </View>
                     </View>
@@ -76,8 +76,7 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         borderRadius: 15,
-        padding: 35,
-        alignItems: 'center'
+        padding: 10,
     },
     ratingCards: {
         display: 'flex',
