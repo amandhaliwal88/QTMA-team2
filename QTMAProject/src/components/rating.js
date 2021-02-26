@@ -6,18 +6,18 @@ class RatingCompact extends Component {
     render() {
         return(
             <View style={{display: 'flex', flexDirection: 'row', paddingHorizontal: 15, paddingVertical: 5, justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#d4a265', borderRadius: 15}}>
-                <Star name='star' size={30}/>
+                <Star name='star' size={30} />
                 <Text style={{fontSize: 30}}> {this.props.rating}/5</Text>
             </View>
         )
     }
 }
 
-class RatingDetailed extends Component {
+export class RatingDetailed extends Component {
     render() {
         return(
-            <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', padding: 10}}>
-
+            <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+                {Array(this.props.rating).fill(<Star name='star' size={30}/>)}
             </View>
         )
     }
