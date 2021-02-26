@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import RatingCompact, { RatingDetailed } from '../../components/rating';
 
 const tempRatings = [
@@ -33,12 +33,12 @@ class RatingsScreen extends Component {
 
         return(
             <View style={{display: 'flex', flexDirection: 'column'}}>
-                <Text style={{fontSize: 35, fontWeight: 'bold', padding: 10}}>McDonald's</Text> 
-                <Text style={{fontSize: 30, fontWeight: 'bold', padding: 10, alignSelf: 'center'}}>Eagle Rating</Text>
+                <Text style={styles.restaurantText}>McDonald's</Text> 
+                <Text style={styles.ratingText}>Eagle Rating</Text>
                 <RatingDetailed rating={eagleRating} />
                 {tempRatings.map((item, index) => {
                     return(
-                        <View key={item.name} style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 10}}>
+                        <View key={item.name} style={styles.restaurantRating}>
                             <Text style={{fontSize: 30, fontWeight: 'bold'}}>{item.name}</Text>
                             <RatingCompact rating={item.rating} />
                         </View>
@@ -48,5 +48,23 @@ class RatingsScreen extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    restaurantText: {
+        fontSize: 35,
+        fontWeight: 'bold',
+        padding: 10
+    },
+    ratingText: {
+        fontSize: 30, fontWeight: 'bold', padding: 10, alignSelf: 'center'
+    },
+    restaurantRating: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10
+    }
+})
 
 export default RatingsScreen
