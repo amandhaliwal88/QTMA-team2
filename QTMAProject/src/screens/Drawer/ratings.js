@@ -35,15 +35,8 @@ class RatingsScreen extends Component {
             <View style={{display: 'flex', flexDirection: 'column'}}>
                 <Text style={styles.restaurantText}>McDonald's</Text> 
                 <Text style={styles.ratingText}>Eagle Rating</Text>
-                <RatingDetailed rating={eagleRating} />
-                {tempRatings.map((item, index) => {
-                    return(
-                        <View key={item.name} style={styles.restaurantRating}>
-                            <Text style={{fontSize: 30, fontWeight: 'bold'}}>{item.name}</Text>
-                            <RatingCompact rating={item.rating} />
-                        </View>
-                    )
-                })}
+                <RatingDetailed rating={eagleRating} detailedRatings={tempRatings} />
+                <Text style={styles.ratingText}>Click on the stars for more detailed information</Text>
             </View>
         )
     }
@@ -56,14 +49,10 @@ const styles = StyleSheet.create({
         padding: 10
     },
     ratingText: {
-        fontSize: 30, fontWeight: 'bold', padding: 10, alignSelf: 'center'
-    },
-    restaurantRating: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 10
+        fontSize: 30,
+        fontWeight: 'bold',
+        padding: 10,
+        alignSelf: 'center'
     }
 })
 
