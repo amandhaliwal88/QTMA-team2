@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import Star from 'react-native-vector-icons/Fontisto';
+import Star from 'react-native-vector-icons/FontAwesome';
 
 class RatingCompact extends Component {
     render() {
@@ -18,6 +18,7 @@ export class RatingDetailed extends Component {
         return(
             <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
                 {Array(this.props.rating).fill(<Star name='star' size={30}/>)}
+                {Array(5 - this.props.rating).fill(<Star name='star-o' size={30}/>)}
             </View>
         )
     }
