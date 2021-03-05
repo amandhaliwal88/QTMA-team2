@@ -23,7 +23,7 @@ const mystyle={
 }
 
 
-const leopardTitle={
+const EagleTitle={
   textAlign: 'center',
   color: 'white',
   fontSize: 30,
@@ -78,10 +78,10 @@ const inputStyle = {
 const AuthForm = (props) => {
   displayLogin = (
     <LinearGradient
-          colors={['#ff5242', '#f5841b' ]}
+          colors={['#7D6959', '#7D6959' ]}
           style={mystyle}
         >
-      <Text style={leopardTitle}>{'leopard.'}</Text>
+      <Text style={EagleTitle}>{'Eagle.'}</Text>
       <TextInput style={inputText}
         underlineColor="white"
         color="white"
@@ -111,7 +111,7 @@ const AuthForm = (props) => {
     
      
         <Text style={newTitle}>
-          New to leopard?
+          New to Eagle?
         </Text>
           <Button
           style={styles.authButton}
@@ -137,10 +137,10 @@ const AuthForm = (props) => {
 
   displayRegister = (
     <LinearGradient
-          colors={['#ff5242', '#f5841b' ]}
+          colors={['#7D6959', '#7D6959' ]}
           style={mystyle}
         >
-      <Text style={leopardTitle}>{'leopard.'}</Text>
+      <Text style={EagleTitle}>{'Eagle.'}</Text>
 
       <TextInput
         style={inputText}
@@ -201,7 +201,7 @@ const AuthForm = (props) => {
     colors={['#ff5242', '#f5841b' ]}
     style={mystyle}
     >
-      <Text style={leopardTitle}>{'leopard.'}</Text>
+      <Text style={EagleTitle}>{'Eagle.'}</Text>
 
       <TextInput
         style={inputText}
@@ -254,6 +254,7 @@ export default withFormik({
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
     ) {
       errors.email = 'Invalid email address';
+      //console.log("invalid")
     }
 
     if (!values.password) {
