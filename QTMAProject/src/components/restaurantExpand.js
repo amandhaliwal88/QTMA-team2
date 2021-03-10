@@ -1,6 +1,7 @@
 import React from "react";
 import {Modal, View, Text, StyleSheet,TouchableHighlight }from "react-native";
 import { BarChart, Grid ,XAxis} from 'react-native-svg-charts';
+import DeliveryAvailability from './deliveryAvailability';
 
 export default class ReastaurantExpanded extends React.Component {
     render() {
@@ -26,6 +27,9 @@ export default class ReastaurantExpanded extends React.Component {
                           contentInset={{ left: 18, right: 18 }}
                           svg={{ fontSize: 10, fill: '#000000' }}/>
                     </BarChart>
+                    <View style={{padding: 10}}></View>
+                    <DeliveryAvailability uberEats={this.props.data.delivery.uberEats} doorDash={this.props.data.delivery.doorDash} skipTheDishes={this.props.data.delivery.skipTheDishes} faceDrive={this.props.data.delivery.faceDrive} size={55} padding={16}/>
+                    <View style={{padding: 10}}></View>
                   <TouchableHighlight
                   onPress={this.props.onPress}
                   underlayColor='#EAE2B7'

@@ -36,7 +36,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+            delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "2",
@@ -60,7 +61,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+            delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "3",
@@ -84,7 +86,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "4",
@@ -108,7 +111,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "5",
@@ -132,7 +136,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "6",
@@ -156,7 +161,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 90, label: 'Saturday',},
               {value: 55, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "7",
@@ -180,7 +186,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 90, label: 'Saturday',},
               {value: 55, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "8",
@@ -204,7 +211,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "9",
@@ -228,7 +236,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "10",
@@ -252,7 +261,8 @@ class ExploreScreen extends Component {
               {value: 85, label: 'Friday',},
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
-              ]
+              ],
+              delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
           }
         ]
     };
