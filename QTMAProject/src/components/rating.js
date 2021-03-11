@@ -4,10 +4,11 @@ import Star from 'react-native-vector-icons/FontAwesome';
 
 class RatingCompact extends Component {
     render() {
+        let rating = this.props.rating <= 5 ? this.props.rating : this.props.rating/2;
         return(
             <View style={styles.ratingCards}>
-                <Star name='star' size={30} />
-                <Text style={styles.ratingCardsText}> {this.props.rating}/5</Text>
+                <Star name='star' size={15} />
+                <Text style={styles.ratingCardsText}> {rating}/5</Text>
             </View>
         )
     }
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
         borderRadius: 15
       },
       ratingCardsText: {
-        fontSize: 30
+        fontSize: 15
       },
       ratingCardsDetailed: {
         display: 'flex',

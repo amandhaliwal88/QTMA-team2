@@ -11,6 +11,10 @@ import Ionicon from 'react-native-vector-icons/Ionicons'
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import DeliveryAvailability from '../../components/deliveryAvailability'
+import Pricing from '../../components/pricing'
+import RatingCompact from '../../components/rating'
+
+let restaurant_data = require('../../../restaurant-data/final_v2.json');
 
 /**
  * * To use graphs we are using react-native-svg : https://github.com/react-native-svg/react-native-svg#automatically
@@ -98,11 +102,15 @@ class HomeScreen extends Component {
        <View style={styles.form}>
          <Text style={styles.pageTitle}>Home</Text>
          <SortButton>style={{zIndex:1329}}</SortButton>
-         <RestaurantCard name={data.mcdonalds} url={data.mcdonaldsURL}times={[40, 20, 30, 90, 60, 20, 50]} address={'285 Princess St'} delivery={mcdonaldsDelivery}/>
-         <RestaurantCard name={data.harveys} url={data.harveysURL} times={[13, 45, 23, 75, 24, 23, 34]} address={'1141 Division St'} delivery={harveysDelivery}/>
-         <RestaurantCard name={data.tacoBell} url={data.tacoBellURL} times={[67, 28, 45, 15, 75, 34, 54]} address={'29 Warne Crescent'} delivery={tacoBellDelivery}/>
-         <RestaurantCard name={data.houseOfDonair} url={data.houseOfDonairURL} times={[67, 48, 25, 15, 55, 34, 54]} address={'394 Princess St'} delivery={houseOfDonairDelivery}/>
-         <RestaurantCard name={data.pizzaStudio} url={data.pizzaStudioURL} times={[40, 30, 20, 60, 90, 20, 50]} address={'356 Princess St'} delivery={pizzaStudioDelivery}/> 
+          {restaurant_data.map(restaurant =>(
+            <RestaurantCard name={Object.keys(restaurant)[0]} 
+            key={Object.keys(restaurant)[0]}
+            url={restaurant[Object.keys(restaurant)[0]].Image} 
+            delivery={restaurant[Object.keys(restaurant)[0]].availability} 
+            rating={restaurant[Object.keys(restaurant)[0]].Rating} 
+            deliveryTime={restaurant[Object.keys(restaurant)[0]].Delivery_Time} 
+            price={restaurant[Object.keys(restaurant)[0]].Price}/>
+          ))}
        </View>
       </ScrollView>
     );
@@ -130,7 +138,23 @@ const RestaurantCard = (props) => {
           </View>
 
           <View style={{flexDirection:"column",flex:3, backgroundColor:'#FFFFFF'}}>
-            <BarChartExample times={props.times}></BarChartExample>
+            <View style={{padding:8}}></View>
+          <View style={{flex:5, flexDirection:"row"}}>
+            <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>
+          </View>
+          <View style={{flex:5, flexDirection:"row"}}>
+            <Ionicon name='stopwatch-outline' size={20}/>
+            <Text>{props.deliveryTime}</Text>
+            <View style={{padding: 5}}/>
+            <Pricing price={props.price}/>
+          {/*<Paragraph>{props.address}</Paragraph>   -----Addresses/locations are mostly in name of restaurants scraped --------*/ }
+          
+          </View>
+
+          <View style={{flex:5, flexDirection:"row"}}>
+            <RatingCompact rating={props.rating}/>
+          </View>
+
           </View>
 
         </View>
@@ -138,19 +162,10 @@ const RestaurantCard = (props) => {
 {/* This is the bottom row */}
         <View style={{flexDirection:"row",flex:1, backgroundColor:'#FFFFFF', padding:5, borderRadius:10}}>
 
-          <View style={{flex:5, flexDirection:"row"}}>
-            <Ionicon name='location' size={20}/>
-          <Paragraph>{props.address}</Paragraph>
-          <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>
-          </View>
+          
 
 
 
-          <View style={{flex:1, flexDirection:'row'}}>
-            <FontAwesome style={{padding:2, color:'#D0D0D0'}}name='usd' size={20}/>
-            <FontAwesome style={{padding:2, color:'#D0D0D0'}}name='usd' size={20}/>
-            <FontAwesome style={{padding:2, color:'#000000'}} name='usd' size={20}/>
-          </View>
           
         </View>
         
