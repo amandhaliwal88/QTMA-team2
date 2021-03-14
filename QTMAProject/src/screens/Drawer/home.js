@@ -39,6 +39,62 @@ class HomeScreen extends Component {
   }
 }
 
+// const RestaurantCard = (props) => {
+//   return (
+//     <Card style={styles.card}>
+//       <View style={{backgroundColor:'#E1E3E0', borderRadius:5, borderWidth:5, borderColor:'#E1E3E0'}}>
+
+//       <Card.Content>
+//         <View>
+//         <Title style={{color:'#000000'}}>{props.name}</Title>
+//         </View>
+//       </Card.Content>
+
+// {/* This is the image and the bar chart */}
+//       <View style={{flexDirection:"column", backgroundColor:'#FFFFFF', borderRadius:10}}>
+
+//         <View style={{flex:3, flexDirection:"row", alignItems:'center'}}>
+
+        //   <View style={{flex:2, backgroundColor:'#FFFFFF', padding:8, borderRadius:8}}>
+        //     <Card.Cover source={{uri: props.url}} style={{height:100, borderRadius:10}}/>
+        //   </View>
+
+        //   <View style={{flexDirection:"column",flex:3, backgroundColor:'#FFFFFF'}}>
+        //     <View style={{padding:8}}></View>
+        //   <View style={{flex:5, flexDirection:"row"}}>
+        //     <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>
+        //   </View>
+        //   <View style={{flex:5, flexDirection:"row"}}>
+        //     <Ionicon name='stopwatch-outline' size={20}/>
+        //     <Text>{props.deliveryTime}</Text>
+        //     <View style={{padding: 5}}/>
+        //     <Pricing price={props.price}/>
+        //   {/*<Paragraph>{props.address}</Paragraph>   -----Addresses/locations are mostly in name of restaurants scraped --------*/ }
+          
+        //   </View>
+
+        //   <View style={{flex:5, flexDirection:"row"}}>
+        //     <RatingCompact rating={props.rating}/>
+        //   </View>
+
+        //   </View>
+
+        // </View>
+
+// {/* This is the bottom row */}
+//         <View style={{flexDirection:"row",flex:1, backgroundColor:'#FFFFFF', padding:5, borderRadius:10}}>
+
+          
+//         </View>
+        
+//       </View>
+
+//       </View>
+//     </Card>
+//   )
+// }
+
+
 const RestaurantCard = (props) => {
   return (
     <Card style={styles.card}>
@@ -50,8 +106,8 @@ const RestaurantCard = (props) => {
         </View>
       </Card.Content>
 
-{/* This is the image and the bar chart */}
-      <View style={{flexDirection:"column", backgroundColor:'#FFFFFF', borderRadius:10}}>
+{/* This is the image/left side*/}
+      <View style={{flex:1, flexDirection:"row", backgroundColor:'#FFFFFF', borderRadius:10}}>
 
         <View style={{flex:3, flexDirection:"row", alignItems:'center'}}>
 
@@ -59,31 +115,32 @@ const RestaurantCard = (props) => {
             <Card.Cover source={{uri: props.url}} style={{height:100, borderRadius:10}}/>
           </View>
 
-          <View style={{flexDirection:"column",flex:3, backgroundColor:'#FFFFFF'}}>
-            <View style={{padding:8}}></View>
-          <View style={{flex:5, flexDirection:"row"}}>
-            <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>
-          </View>
-          <View style={{flex:5, flexDirection:"row"}}>
-            <Ionicon name='stopwatch-outline' size={20}/>
-            <Text>{props.deliveryTime}</Text>
-            <View style={{padding: 5}}/>
-            <Pricing price={props.price}/>
-          {/*<Paragraph>{props.address}</Paragraph>   -----Addresses/locations are mostly in name of restaurants scraped --------*/ }
-          
-          </View>
-
-          <View style={{flex:5, flexDirection:"row"}}>
-            <RatingCompact rating={props.rating}/>
-          </View>
-
-          </View>
 
         </View>
 
-{/* This is the bottom row */}
-        <View style={{flexDirection:"row",flex:1, backgroundColor:'#FFFFFF', padding:5, borderRadius:10}}>
+{/* This is the right side*/}
+        <View style={{flexDirection:"row",flex:5, backgroundColor:'#ffffff', padding:5, borderRadius:10}}>
 
+          <View style={{ flexDirection:"column"}}>
+
+            <View style={{flex:2, flexDirection:'row'}}>
+              <Ionicon name='location' size={20}/>
+              <Paragraph>{props.address}</Paragraph>
+            </View>
+
+            <View style={{flex:2}}>
+              <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>
+            </View>
+
+            <View style={{backgroundColor:'#FFFFFF', flex:5, flexDirection:"row"}}>
+              <Pricing price={props.price}/>
+              <Ionicon name='stopwatch-outline' size={20}/>
+              <Text>{props.deliveryTime}</Text>
+              {/* <RatingCompact rating={props.rating}/> */}
+              <View style={{padding: 5}}/>          
+            </View>
+          
+          </View>
           
         </View>
         
