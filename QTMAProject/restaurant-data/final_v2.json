@@ -1,10 +1,10 @@
 [
     {
       "Starbucks (Princess & Wellington)":{
-        "Delivery Time":"5 to 15 Min",
-        "Delivery Cost":"$3.99 Delivery Fee",
+        "Delivery_Time":"5 to 15 Min",
+        "Delivery_Cost":"$3.99 Delivery Fee",
         "Rating":"4.6",
-        "Price":" $",
+        "Price":"$",
         "Image":"https://d1ralsognjng37.cloudfront.net/f77c69b4-6078-4ffe-8a9b-ba821937c052.jpeg",
         "availability":{
           "uberEats":true,
@@ -16,10 +16,10 @@
     },
     {
       "A&W (328 King St)":{
-        "Delivery Time":"10 to 20 Min",
-        "Delivery Cost":"$3.99 Delivery Fee",
+        "Delivery_Time":"10 to 20 Min",
+        "Delivery_Cost":"$3.99 Delivery Fee",
         "Rating":"4.0",
-        "Price":" $",
+        "Price":"$",
         "Image":"https://d1ralsognjng37.cloudfront.net/c3cf06f2-e597-4a59-8b42-0f2aba2821f2.jpeg",
         "availability":{
           "uberEats":true,
@@ -31,10 +31,10 @@
     },
     {
       "Freshii (271 Princess St)":{
-        "Delivery Time":"10 to 20 Min",
-        "Delivery Cost":"$2.99 Delivery Fee",
+        "Delivery_Time":"10 to 20 Min",
+        "Delivery_Cost":"$2.99 Delivery Fee",
         "Rating":"4.5",
-        "Price":" $$",
+        "Price":"$$",
         "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC85MzUwYjljMy1kZDE5LTQ3MmEtYjkxOC1jM2EzZTRjNWQ5YTUuanBlZw==",
         "availability":{
           "uberEats":true,
@@ -46,10 +46,10 @@
     },
     {
       "Ali Baba Kebab":{
-        "Delivery Time":"10 to 20 Min",
-        "Delivery Cost":"$2.99 Delivery Fee",
+        "Delivery_Time":"10 to 20 Min",
+        "Delivery_Cost":"$2.99 Delivery Fee",
         "Rating":"4.7",
-        "Price":" $",
+        "Price":"$",
         "Image":"https://d1ralsognjng37.cloudfront.net/f426c757-b30e-4398-926b-7a16071cb603.jpeg",
         "availability":{
           "uberEats":true,
@@ -61,10 +61,10 @@
     },
     {
       "Melt&Grill":{
-        "Delivery Time":"10 to 20 Min",
-        "Delivery Cost":"$2.99 Delivery Fee",
+        "Delivery_Time":"10 to 20 Min",
+        "Delivery_Cost":"$2.99 Delivery Fee",
         "Rating":"4.4",
-        "Price":" $",
+        "Price":"$",
         "Image":"https://d1ralsognjng37.cloudfront.net/1424a10c-8d7e-484f-91be-af47889b8dc1",
         "availability":{
           "uberEats":true,
@@ -76,10 +76,10 @@
     },
     {
       "Pita Pit (Princess & Division)":{
-        "Delivery Time":"10 to 20 Min",
-        "Delivery Cost":"$3.99 Delivery Fee",
+        "Delivery_Time":"10 to 20 Min",
+        "Delivery_Cost":"$3.99 Delivery Fee",
         "Rating":"4.5",
-        "Price":" $$",
+        "Price":"$$",
         "Image":"https://duyt4h9nfnj50.cloudfront.net/resized/bulk_actions_image_82ac3577-5f07-46e0-8d58-54acb83244f3-w750-c3.jpg",
         "availability":{
           "uberEats":true,
@@ -91,10 +91,10 @@
     },
     {
       "Copper Branch (268 Princess St)":{
-        "Delivery Time":"10 to 20 Min",
-        "Delivery Cost":"$2.99 Delivery Fee",
+        "Delivery_Time":"10 to 20 Min",
+        "Delivery_Cost":"$2.99 Delivery Fee",
         "Rating":"4.6",
-        "Price":" $$",
+        "Price":"$$",
         "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9hNDAxNjNkYi03MmJkLTQ5YmUtYTM3YS1iYzExYTEyMmY5MDMuanBlZw==",
         "availability":{
           "uberEats":true,
@@ -106,10 +106,10 @@
     },
     {
       "McDonald's (Princess & Clergy)":{
-        "Delivery Time":"5 to 15 Min",
-        "Delivery Cost":"$3.99 Delivery Fee",
+        "Delivery_Time":"5 to 15 Min",
+        "Delivery_Cost":"$3.99 Delivery Fee",
         "Rating":"4.3",
-        "Price":" $",
+        "Price":"$",
         "Image":"https://d1ralsognjng37.cloudfront.net/e9ea4ce3-4543-4545-aca1-a8a9e7b914a0.jpeg",
         "availability":{
           "uberEats":true,
@@ -121,10 +121,10 @@
     },
     {
       "Sushiya Zen":{
-        "Delivery Time":"20 to 30 Min",
-        "Delivery Cost":"$2.99 Delivery Fee",
+        "Delivery_Time":"20 to 30 Min",
+        "Delivery_Cost":"$2.99 Delivery Fee",
         "Rating":"4.9",
-        "Price":" $",
+        "Price":"$",
         "Image":"https://d1ralsognjng37.cloudfront.net/8b2f572f-3e18-470c-a269-32314f9ce665.jpeg",
         "availability":{
           "uberEats":true,
@@ -136,10 +136,10 @@
     },
     {
       "Pizza Studio (Kingston)":{
-        "Delivery Time":"10 to 20 Min",
-        "Delivery Cost":"$2.99 Delivery Fee",
+        "Delivery_Time":"10 to 20 Min",
+        "Delivery_Cost":"$2.99 Delivery Fee",
         "Rating":"4.3",
-        "Price":" $$",
+        "Price":"$$",
         "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9mZDU1Njg5OS1lNjYwLTQ1ZTAtODEyOS1iMTQ0ZjE1YTkxZTMuanBlZw==",
         "availability":{
           "uberEats":true,
@@ -152,10 +152,10 @@
    
    {
      "Harvey's (Princess Street)":{
-       "Delivery Time":"15 to 25 Min",
-       "Delivery Cost":"$3.99 Delivery Fee",
+       "Delivery_Time":"15 to 25 Min",
+       "Delivery_Cost":"$3.99 Delivery Fee",
        "Rating":"4.5",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://static.skipthedishes.com/harveys-princess-list-image-mobile-1508182735020.png",
        "availability":{
          "uberEats":true,
@@ -167,10 +167,10 @@
    },
    {
      "Tommy's":{
-       "Delivery Time":"30 to 40 Min",
-       "Delivery Cost":"$2.99 Delivery Fee",
+       "Delivery_Time":"30 to 40 Min",
+       "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.5",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC80MzY5MWMxOS04NWM2LTQ0MGItOTYyNi00M2YxNjdiODE5NzQuanBlZw==",
        "availability":{
          "uberEats":true,
@@ -182,10 +182,10 @@
    },
    {
      "Freshii (764 Gardiners Rd)":{
-       "Delivery Time":"25 to 35 Min",
-       "Delivery Cost":"$5.99 Delivery Fee",
+       "Delivery_Time":"25 to 35 Min",
+       "Delivery_Cost":"$5.99 Delivery Fee",
        "Rating":"4.7",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC85MzUwYjljMy1kZDE5LTQ3MmEtYjkxOC1jM2EzZTRjNWQ5YTUuanBlZw==",
        "availability":{
          "uberEats":true,
@@ -197,10 +197,10 @@
    },
    {
      "Mucho Burrito (770 Gardiners Road)":{
-       "Delivery Time":"25 to 35 Min",
-       "Delivery Cost":"$5.99 Delivery Fee",
+       "Delivery_Time":"25 to 35 Min",
+       "Delivery_Cost":"$5.99 Delivery Fee",
        "Rating":"3.8",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8yMzI3ZGNmMS00OWFjLTQ0ZDItYWRmZi0yYTkzNzkyMDgyMTAud2VicA==",
        "availability":{
          "uberEats":true,
@@ -212,10 +212,10 @@
    },
    {
      "Boston Pizza (95 Dalton Ave)":{
-       "Delivery Time":"30 to 40 Min",
-       "Delivery Cost":"$4.99 Delivery Fee",
+       "Delivery_Time":"30 to 40 Min",
+       "Delivery_Cost":"$4.99 Delivery Fee",
        "Rating":"3.7",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC82ZjBjZTFmYS01MmMxLTRmMjMtYmVhMC1lMjNmNWNmNmEzNDEuanBlZw==",
        "availability":{
          "uberEats":true,
@@ -227,10 +227,10 @@
    },
    {
      "Burning Grill":{
-       "Delivery Time":"20 to 30 Min",
-       "Delivery Cost":"$3.99 Delivery Fee",
+       "Delivery_Time":"20 to 30 Min",
+       "Delivery_Cost":"$3.99 Delivery Fee",
        "Rating":"4.6",
-       "Price":"N/A",
+       "Price":"$$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9mZmViZTU1MC0zYzY1LTQ4NDAtYjExZS1kNjRmZjRkZDMzMjYuanBlZw==",
        "availability":{
          "uberEats":true,
@@ -242,10 +242,10 @@
    },
    {
      "Crossroads Country Store":{
-       "Delivery Time":"45 to 55 Min",
-       "Delivery Cost":"$8.99 Delivery Fee",
+       "Delivery_Time":"45 to 55 Min",
+       "Delivery_Cost":"$8.99 Delivery Fee",
        "Rating":"New",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9jNDVlMTY2MC05NmY0LTRmYmEtYmE2My1iZjkxNGRjOGZlZGIuanBlZw==",
        "availability":{
          "uberEats":true,
@@ -257,10 +257,10 @@
    },
    {
      "The Works Craft Burgers & Beers (298 Princess Street)":{
-       "Delivery Time":"20 to 30 Min",
-       "Delivery Cost":"$2.99 Delivery Fee",
+       "Delivery_Time":"20 to 30 Min",
+       "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.2",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC9kNTJiZGZjYS1lYjMwLTRlZDItYmQ2Yy0zMDFjYTAzMDg3MzYuanBlZw==",
        "availability":{
          "uberEats":true,
@@ -272,10 +272,10 @@
    },
    {
      "Score Pizza":{
-       "Delivery Time":"15 to 25 Min",
-       "Delivery Cost":"$2.99 Delivery Fee",
+       "Delivery_Time":"15 to 25 Min",
+       "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.4",
-       "Price":"N/A",
+       "Price":"$$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC80NGRkMmIyNy0wZThjLTRlZmItOWI4NS1jOWFkZTNiYTUxYjguanBlZw==",
        "availability":{
          "uberEats":true,
@@ -287,10 +287,10 @@
    },
    {
      "Mandarin Kingston":{
-       "Delivery Time":"25 to 35 Min",
-       "Delivery Cost":"$3.99 Delivery Fee",
+       "Delivery_Time":"25 to 35 Min",
+       "Delivery_Cost":"$3.99 Delivery Fee",
        "Rating":"4.5",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://cn-geo1.uber.com/image-proc/resize/eats/format=webp/width=550/height=440/quality=70/srcb64=aHR0cHM6Ly9kMXJhbHNvZ25qbmczNy5jbG91ZGZyb250Lm5ldC8yNGM2YjgxMi03MzBkLTRmNmItOTcyOC1kZDdlMTUwYmJmN2YuanBlZw==",
        "availability":{
          "uberEats":true,
@@ -366,7 +366,7 @@
        "Delivery_Time":"15 to 30 Min",
        "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.8",
-       "Price":"N/A",
+       "Price":"$$",
        "Image":"https://menu-images-static.skipthedishes.com/images/resized/mobile-edc3e6f7ac4726d8dbfe.jpg",
        "availability":{
          "uberEats":true,
@@ -441,7 +441,7 @@
        "Delivery_Time":"20 to 30 Min",
        "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.4",
-       "Price":"N/A",
+       "Price":"$$",
        "Image":"https://menu-images-static.skipthedishes.com/images/resized/mobile-c2616c9d7205590885d3.jpg",
        "availability":{
          "uberEats":true,
@@ -606,7 +606,7 @@
        "Delivery_Time":"15 to 25 Min",
        "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.7",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://d1ralsognjng37.cloudfront.net/66d7b99d-a39f-4f97-aecd-bbc6865f1d54.jpeg",
        "availability":{
          "uberEats":true,
@@ -621,7 +621,7 @@
        "Delivery_Time":"25 to 35 Min",
        "Delivery_Cost":"$6.99 Delivery Fee",
        "Rating":"4.6",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://d1ralsognjng37.cloudfront.net/4d6bd345-1c7a-448f-ac09-67c59761284a.jpeg",
        "availability":{
          "uberEats":true,
@@ -636,7 +636,7 @@
        "Delivery_Time":"15 to 25 Min",
        "Delivery_Cost":"$3.99 Delivery Fee",
        "Rating":"4.5",
-       "Price":"N/A",
+       "Price":"$$",
        "Image":"https://d1ralsognjng37.cloudfront.net/ec279bd3-2b1c-4658-b4ca-cc9d7522d36b.webp",
        "availability":{
          "uberEats":true,
@@ -651,7 +651,7 @@
        "Delivery_Time":"20 to 30 Min",
        "Delivery_Cost":"$3.99 Delivery Fee",
        "Rating":"4.0",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://duyt4h9nfnj50.cloudfront.net/resized/1519615836776-w550-45.jpg",
        "availability":{
          "uberEats":true,
@@ -666,7 +666,7 @@
        "Delivery_Time":"20 to 30 Min",
        "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.3",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://duyt4h9nfnj50.cloudfront.net/resized/1518410803947-w550-43.jpg",
        "availability":{
          "uberEats":true,
@@ -681,7 +681,7 @@
        "Delivery_Time":"20 to 30 Min",
        "Delivery_Cost":"$3.99 Delivery Fee",
        "Rating":"4.8",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://duyt4h9nfnj50.cloudfront.net/resized/1527099666565-w2880-38.jpg",
        "availability":{
          "uberEats":true,
@@ -696,7 +696,7 @@
        "Delivery_Time":"15 to 25 Min",
        "Delivery_Cost":"$1.99 Delivery Fee",
        "Rating":"4.5",
-       "Price":" $",
+       "Price":"$",
        "Image":"https://d1ralsognjng37.cloudfront.net/d2fc07d1-357d-4337-a4c2-4cc58261c72c.jpeg",
        "availability":{
          "uberEats":true,
@@ -711,7 +711,7 @@
        "Delivery_Time":"5 to 15 Min",
        "Delivery_Cost":"$2.99 Delivery Fee",
        "Rating":"4.7",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://duyt4h9nfnj50.cloudfront.net/resized/6310c63d6b9285f03ecb52358b769dfb-w2880-1d.jpg",
        "availability":{
          "uberEats":true,
@@ -726,7 +726,7 @@
        "Delivery_Time":"30 to 40 Min",
        "Delivery_Cost":"$5.99 Delivery Fee",
        "Rating":"4.4",
-       "Price":" $$",
+       "Price":"$$",
        "Image":"https://d1ralsognjng37.cloudfront.net/bf92716a-24ca-4cda-bb84-a4c8e85ce9e5.jpeg",
        "availability":{
          "uberEats":true,
@@ -741,7 +741,7 @@
        "Delivery_Time":"15 to 25 Min",
        "Delivery_Cost":"$3.99 Delivery Fee",
        "Rating":"4.7",
-       "Price":"N/A",
+       "Price":"$$",
        "Image":"https://d1ralsognjng37.cloudfront.net/d0021a70-f48b-4c50-94c9-c20593d77db0.jpeg",
        "availability":{
          "uberEats":true,
