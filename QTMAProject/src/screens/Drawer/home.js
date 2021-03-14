@@ -16,84 +16,6 @@ import RatingCompact from '../../components/rating'
 
 let restaurant_data = require('../../../restaurant-data/final_v2.json');
 
-/**
- * * To use graphs we are using react-native-svg : https://github.com/react-native-svg/react-native-svg#automatically
- * * run "yarn add react-native-svg" in project directory
- * * then run "cd ios && pod install"
- */
-
-var data = {
-  mcdonalds:"McDonald's",
-  mcdonaldsURL:"https://www.incimages.com/uploaded_files/image/1920x1080/getty_1026535662_2000133316537670495_415913.jpg",
-  
-  pizzaStudio:"Pizza Studio",
-  pizzaStudioURL:"https://lh3.googleusercontent.com/proxy/VwTfKDJKz5IUmCPVDZ6bSS2OKReZEFt55AgzcHyivbBauRv8oXy3aRGA_PRwWbXdjD1Ac40pqy-BSEzVfVRLR339tz4st8NWBg",
-  
-  harveys:"Harveys",
-  harveysURL:"https://pbs.twimg.com/profile_images/1263917387230953472/J-vcoYyi.jpg",
-  
-  tacoBell:"Taco Bell",
-  tacoBellURL:"https://cdn.livekindly.co/wp-content/uploads/2020/03/vegan-plant-based-news-taco-bell.jpg",
-  
-  houseOfDonair:"House of Donair",
-  houseOfDonairURL:"https://images.squarespace-cdn.com/content/5be8b92df79392b1e4eb05c1/1546490773999-81JW33N44XNTN7WJKMHD/Capture.PNG?content-type=image%2Fpng"
-}
-
-var mcdonaldsTimes = [
-            {value: 50, label: 'Monday',},
-            {value: 10, label: 'Tuesday',},
-            {value: 40, label: 'Wednesday',},
-            {value: 95, label: 'Thursday',},
-            {value: 85, label: 'Friday',},
-            {value: 95, label: 'Saturday',},
-            {value: 85, label: 'Sunday',},
-            ]
-
-var pizzaStudioTimes = [
-            {value: 50, label: 'Monday',},
-            {value: 10, label: 'Tuesday',},
-            {value: 40, label: 'Wednesday',},
-            {value: 95, label: 'Thursday',},
-            {value: 85, label: 'Friday',},
-            {value: 95, label: 'Saturday',},
-            {value: 85, label: 'Sunday',},
-            ]
-
-var harveysTimes = [
-            {value: 50, label: 'Monday',},
-            {value: 10, label: 'Tuesday',},
-            {value: 40, label: 'Wednesday',},
-            {value: 95, label: 'Thursday',},
-            {value: 85, label: 'Friday',},
-            {value: 95, label: 'Saturday',},
-            {value: 85, label: 'Sunday',},
-            ]
-
-var tacoBellTimes = [
-            {value: 50, label: 'Monday',},
-            {value: 10, label: 'Tuesday',},
-            {value: 40, label: 'Wednesday',},
-            {value: 95, label: 'Thursday',},
-            {value: 85, label: 'Friday',},
-            {value: 95, label: 'Saturday',},
-            {value: 85, label: 'Sunday',},
-            ]
-
-var houseOfDonairTimes = [
-            {value: 50, label: 'Monday',},
-            {value: 10, label: 'Tuesday',},
-            {value: 40, label: 'Wednesday',},
-            {value: 95, label: 'Thursday',},
-            {value: 85, label: 'Friday',},
-            {value: 95, label: 'Saturday',},
-            {value: 85, label: 'Sunday',},
-            ]
-
-var mcdonaldsDelivery = {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true};
-var harveysDelivery = {uberEats: true, doorDash: true, skipTheDishes: false, faceDrive: true};
-var tacoBellDelivery ={uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true};
-var houseOfDonairDelivery = {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true};
-var pizzaStudioDelivery = {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true};
 
 class HomeScreen extends Component {
   render () {
@@ -120,11 +42,11 @@ class HomeScreen extends Component {
 const RestaurantCard = (props) => {
   return (
     <Card style={styles.card}>
-      <View style={{backgroundColor:'#003049', borderRadius:5, borderWidth:5, borderColor:'#003049'}}>
+      <View style={{backgroundColor:'#E1E3E0', borderRadius:5, borderWidth:5, borderColor:'#E1E3E0'}}>
 
       <Card.Content>
         <View>
-        <Title style={{color:'#FFFFFF'}}>{props.name}</Title>
+        <Title style={{color:'#000000'}}>{props.name}</Title>
         </View>
       </Card.Content>
 
