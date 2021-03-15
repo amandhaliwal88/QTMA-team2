@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     ratingCards: {
         display: 'flex',
         flexDirection: 'row',
-        paddingHorizontal: 15,
+        paddingHorizontal: 4,
         paddingVertical: 5,
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         borderRadius: 15
       },
       ratingCardsText: {
-        fontSize: 15
+        fontSize: 13
       },
       ratingCardsDetailed: {
         display: 'flex',

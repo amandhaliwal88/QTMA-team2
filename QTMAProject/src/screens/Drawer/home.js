@@ -119,25 +119,40 @@ const RestaurantCard = (props) => {
         </View>
 
 {/* This is the right side*/}
-        <View style={{flexDirection:"row",flex:5, backgroundColor:'#ffffff', padding:5, borderRadius:10}}>
+        <View style={{flexDirection:"row",flex:5, backgroundColor:'#ffffff', padding:2, borderRadius:10}}>
 
           <View style={{ flexDirection:"column"}}>
 
-            <View style={{flex:2, flexDirection:'row'}}>
-              <Ionicon name='location' size={20}/>
-              <Paragraph>{props.address}</Paragraph>
+{/* This is the four icons and eagle rating  */}
+            <View style={{flex:2, flexDirection:"row", width:45, paddingTop:20}}>
+              {/* four icons */}
+              <View style={{paddingRight:3}}>
+                <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>                
+              </View>
+
+              {/* eagle rating */}
+              <View style={{}}>
+                <RatingCompact rating={props.rating}/>
+              </View>
+
             </View>
 
-            <View style={{flex:2}}>
-              <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>
-            </View>
+{/* This is the bottom row with pricing and timing */}
 
-            <View style={{backgroundColor:'#FFFFFF', flex:5, flexDirection:"row"}}>
-              <Pricing price={props.price}/>
-              <Ionicon name='stopwatch-outline' size={20}/>
-              <Text>{props.deliveryTime}</Text>
-              {/* <RatingCompact rating={props.rating}/> */}
-              <View style={{padding: 5}}/>          
+            <View style={{backgroundColor:'#FFFFFF', flex:5, flexDirection:"row", paddingTop:3}}>
+
+              <View style={{}}>
+                <Pricing price={props.price}/>
+              </View>
+
+              <View style={{paddingLeft:15}}>
+                <Ionicon name='stopwatch-outline' size={20}/>
+              </View>
+
+              <View style={{}}>
+                <Text>{props.deliveryTime}</Text>
+              </View>
+
             </View>
           
           </View>
@@ -163,20 +178,20 @@ const SortButton = () => {
     <Provider>
       <View
         style={{
-          // borderWidth: 1,
-          // borderColor: '#000000',
+
           borderRadius: 10,
           paddingTop: 1,
           flexDirection: 'row',
           justifyContent: 'center',
           zIndex: 200
+          // backgroundColor:"#7D6959"
         }}>
         <Menu
           visible={visible}
           onDismiss={closeMenu}
-          style={{zIndex: 110}}
-          contentStyle={{zIndex: 100}}
-          anchor={<Button onPress={openMenu}>Sort</Button>}>
+          style={{zIndex: 110, style:"#FFFFFF"}}
+          contentStyle={{zIndex: 100, style:"#FFFFFF"}}
+          anchor={<Button onPress={openMenu} style={{color:"#FFFFFF"}}>Sort</Button>}>
           <Menu.Item onPress={() => {}} title="Popularity" style={{zIndex:5}}/>
           <Menu.Item onPress={() => {}} title="$-$$$" style={{zIndex:5}}/>
           <Menu.Item onPress={() => {}} title="A-Z" style={{zIndex:5}}/> 
