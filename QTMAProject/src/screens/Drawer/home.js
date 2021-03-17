@@ -22,6 +22,9 @@ var data = {
   mcdonalds:"McDonald's",
   mcdonaldsURL:"https://www.incimages.com/uploaded_files/image/1920x1080/getty_1026535662_2000133316537670495_415913.jpg",
   
+  sima: "Sima Sushi",
+  simaURL: "https://www.kingstonist.com/wp-content/uploads/2009/11/10nov_sima.png",
+
   pizzaStudio:"Pizza Studio",
   pizzaStudioURL:"https://lh3.googleusercontent.com/proxy/VwTfKDJKz5IUmCPVDZ6bSS2OKReZEFt55AgzcHyivbBauRv8oXy3aRGA_PRwWbXdjD1Ac40pqy-BSEzVfVRLR339tz4st8NWBg",
   
@@ -85,20 +88,22 @@ var houseOfDonairTimes = [
             {value: 85, label: 'Sunday',},
             ]
 
-var mcdonaldsDelivery = {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true};
-var harveysDelivery = {uberEats: true, doorDash: true, skipTheDishes: false, faceDrive: true};
-var tacoBellDelivery ={uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true};
-var houseOfDonairDelivery = {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true};
-var pizzaStudioDelivery = {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true};
+var mcdonaldsDelivery = {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true, time: "20"};
+var simaDelivery = {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true, time: "30"};
+var harveysDelivery = {uberEats: true, doorDash: true, skipTheDishes: false, faceDrive: true, time: "25"};
+var tacoBellDelivery ={uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true, time: "35"};
+var houseOfDonairDelivery = {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true, time: "20"};
+var pizzaStudioDelivery = {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true, time: "20"};
 
 class HomeScreen extends Component {
   render () {
     return (
       <ScrollView>
        <View style={styles.form}>
-         <Text style={styles.pageTitle}>Home</Text>
+         <Text style={styles.pageTitle}>Eagle</Text>
          <SortButton>style={{zIndex:1329}}</SortButton>
          <RestaurantCard name={data.mcdonalds} url={data.mcdonaldsURL}times={[40, 20, 30, 90, 60, 20, 50]} address={'285 Princess St'} delivery={mcdonaldsDelivery}/>
+         <RestaurantCard name={data.sima} url={data.simaURL}times={[40, 20, 30, 90, 60, 20, 50]} address={'66 Princess St'} delivery={simaDelivery}/>
          <RestaurantCard name={data.harveys} url={data.harveysURL} times={[13, 45, 23, 75, 24, 23, 34]} address={'1141 Division St'} delivery={harveysDelivery}/>
          <RestaurantCard name={data.tacoBell} url={data.tacoBellURL} times={[67, 28, 45, 15, 75, 34, 54]} address={'29 Warne Crescent'} delivery={tacoBellDelivery}/>
          <RestaurantCard name={data.houseOfDonair} url={data.houseOfDonairURL} times={[67, 48, 25, 15, 55, 34, 54]} address={'394 Princess St'} delivery={houseOfDonairDelivery}/>
@@ -109,14 +114,14 @@ class HomeScreen extends Component {
   }
 }
 
-const RestaurantCard = (props) => {
+export const RestaurantCard = (props) => {
   return (
     <Card style={styles.card}>
-      <View style={{backgroundColor:'#003049', borderRadius:5, borderWidth:5, borderColor:'#003049'}}>
+      <View style={{ borderRadius: 20, padding: 10, backgroundColor:'#ffffff', shadowColor: 'gray', shadowRadius: 30, shadowOffset:{width: 10, height: 20}, shadowOpacity: 0.4}}>
 
       <Card.Content>
         <View>
-        <Title style={{color:'#FFFFFF'}}>{props.name}</Title>
+        <Title style={{color:'#000000'}}>{props.name}</Title>
         </View>
       </Card.Content>
 
@@ -130,28 +135,11 @@ const RestaurantCard = (props) => {
           </View>
 
           <View style={{flexDirection:"column",flex:3, backgroundColor:'#FFFFFF'}}>
-            <BarChartExample times={props.times}></BarChartExample>
+          <Paragraph>📍 {props.address}</Paragraph>
+          <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={30} padding={2}/>
+          <Paragraph style={{marginTop: 10, fontSize: 20}}>$<Text style={{color:'gray'}}>$$</Text>     <Text style={{fontSize: 15}}>🚘 {props.delivery.time} mins</Text></Paragraph>
           </View>
 
-        </View>
-
-{/* This is the bottom row */}
-        <View style={{flexDirection:"row",flex:1, backgroundColor:'#FFFFFF', padding:5, borderRadius:10}}>
-
-          <View style={{flex:5, flexDirection:"row"}}>
-            <Ionicon name='location' size={20}/>
-          <Paragraph>{props.address}</Paragraph>
-          <DeliveryAvailability uberEats={props.delivery.uberEats} doorDash={props.delivery.doorDash} skipTheDishes={props.delivery.skipTheDishes} faceDrive={props.delivery.faceDrive} size={26} padding={2}/>
-          </View>
-
-
-
-          <View style={{flex:1, flexDirection:'row'}}>
-            <FontAwesome style={{padding:2, color:'#D0D0D0'}}name='usd' size={20}/>
-            <FontAwesome style={{padding:2, color:'#D0D0D0'}}name='usd' size={20}/>
-            <FontAwesome style={{padding:2, color:'#000000'}} name='usd' size={20}/>
-          </View>
-          
         </View>
         
       </View>

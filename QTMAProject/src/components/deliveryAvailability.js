@@ -16,52 +16,52 @@ export default class DeliveryAvailability extends React.Component {
         if(this.props.uberEats){
             uberEats = 
             <TouchableOpacity onPress={() => {Linking.openURL("https://ubereats.com/ca")}}>
-                <Image source={UberEats_logo} style={{width: this.props.size, height:this.props.size}} alt="uber logo"/>
+                <Image source={UberEats_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size}} alt="uber logo"/>
             </TouchableOpacity>
         }
 
         else{
             uberEats = <Grayscale>
-                        <Image source={UberEats_logo} style={{width: this.props.size, height:this.props.size, opacity:0.7}} alt="uber logo tinted"/>
+                        <Image source={UberEats_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size, opacity:0.7}} alt="uber logo tinted"/>
                     </Grayscale>
         }
 
         if(this.props.doorDash){
             doordash = 
             <TouchableOpacity onPress={() => {Linking.openURL("https://www.doordash.com/en-CA")}}>
-                <Image source={DoorDash_logo} style={{width: this.props.size, height:this.props.size}} alt="door dash logo"/>
+                <Image source={DoorDash_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size}} alt="door dash logo"/>
             </TouchableOpacity>
         }
 
         else{
             doordash = <Grayscale>
-                        <Image source={DoorDash_logo} style={{width: this.props.size, height:this.props.size, opacity:0.7}} alt="door dash logo tinted"/>
+                        <Image source={DoorDash_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size, opacity:0.7}} alt="door dash logo tinted"/>
                     </Grayscale>
         }
 
         if(this.props.skipTheDishes){
             skipthedishes = 
             <TouchableOpacity onPress={() => {Linking.openURL("https://skipthedishes.com/")}}>
-                <Image source={SkipDishes_logo} style={{width: this.props.size, height:this.props.size}} alt="skip the dishes logo"/>
+                <Image source={SkipDishes_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size}} alt="skip the dishes logo"/>
             </TouchableOpacity>
         }
 
         else{
             skipthedishes = <Grayscale>
-                        <Image source={SkipDishes_logo} style={{width: this.props.size, height:this.props.size, opacity:0.7}} alt="skip the dishes logo tinted"/>
+                        <Image source={SkipDishes_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size, opacity:0.7}} alt="skip the dishes logo tinted"/>
                     </Grayscale>
         }
 
         if(this.props.faceDrive){
             facedrive = 
             <TouchableOpacity onPress={() => {Linking.openURL("https://orders.facedrive-foods.com/")}}>
-                <Image source={FaceDrive_logo} style={{width: this.props.size, height:this.props.size}} alt="face drive logo"/>
+                <Image source={FaceDrive_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size}} alt="face drive logo"/>
             </TouchableOpacity>
         }
 
         else{
             facedrive = <Grayscale>
-                        <Image source={FaceDrive_logo} style={{width: this.props.size, height:this.props.size, opacity:0.7}} alt="face drive logo tinted"/>
+                        <Image source={FaceDrive_logo} style={{width: this.props.size, borderRadius: 10, height:this.props.size, opacity:0.7}} alt="face drive logo tinted"/>
                     </Grayscale>
         }
 

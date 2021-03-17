@@ -13,10 +13,74 @@ class ExploreScreen extends Component {
     state = {
         search: '',
         modalVisable: false,
+        categories: [
+          {id: "1", name: "Top Rated"},
+          {id: "2", name: "Fast Food"},
+          {id: "3", name: "Breakfast"},
+          {id: "4", name: "Kid-Friendly"},
+          {id: "5", name: "Local"},
+          {id: "6", name: "Vegan"},
+          {id: "7", name: "Greasy Spoon"},
+          {id: "8", name: "Mediterranean"},
+          {id: "9", name: "American"},
+          {
+            id: "10",
+            name: "McDonald's",
+            image: "https://cdn1.matadornetwork.com/blogs/1/2018/09/McDonalds-menu-items-from-around-the-world-1200x900.jpeg",
+            address: "285 Princess Street",
+            price: "$",
+            hours: [
+              {value: "24 Hours", label: 'Monday',},
+              {value: "24 Hours", label: 'Tuesday',},
+              {value: "24 Hours", label: 'Wednesday',},
+              {value: "24 Hours", label: 'Thursday',},
+              {value: "24 Hours", label: 'Friday',},
+              {value: "24 Hours", label: 'Saturday',},
+              {value: "24 Hours", label: 'Sunday',},
+              ],
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ],
+            delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
+          },
+          {
+            id: "11",
+            name: "Sima Sushi",
+            image: "https://media-cdn.tripadvisor.com/media/photo-s/0f/04/4e/5f/lunch-sushi-plate-was.jpg",
+            address: "66 Princess St",
+            price: "$$",
+            hours: [
+              {value: "12:00 AM - 10:00 PM", label: 'Monday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Tuesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Wednesday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Thursday',},
+              {value:  "12:00 AM - 10:00 PM", label: 'Friday',},
+              {value:  "12:00 AM - 6:00 PM", label: 'Saturday',},
+              {value:  "12:00 AM - 5:00 PM", label: 'Sunday',},
+              ],
+            times: [
+              {value: 50, label: 'Monday',},
+              {value: 10, label: 'Tuesday',},
+              {value: 40, label: 'Wednesday',},
+              {value: 95, label: 'Thursday',},
+              {value: 85, label: 'Friday',},
+              {value: 95, label: 'Saturday',},
+              {value: 85, label: 'Sunday',},
+              ],
+            delivery: {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true}
+          },
+        ],
         restaurants: [
           {
             id: "1",
             name: "McDonald's",
+            image: "https://cdn1.matadornetwork.com/blogs/1/2018/09/McDonalds-menu-items-from-around-the-world-1200x900.jpeg",
             address: "285 Princess Street",
             price: "$",
             hours: [
@@ -42,6 +106,7 @@ class ExploreScreen extends Component {
           {
             id: "2",
             name: "Sima Sushi",
+            image: "https://media-cdn.tripadvisor.com/media/photo-s/0f/04/4e/5f/lunch-sushi-plate-was.jpg",
             address: "66 Princess St",
             price: "$$",
             hours: [
@@ -62,11 +127,12 @@ class ExploreScreen extends Component {
               {value: 95, label: 'Saturday',},
               {value: 85, label: 'Sunday',},
               ],
-            delivery: {uberEats: false, doorDash: true, skipTheDishes: true, faceDrive: true}
+            delivery: {uberEats: true, doorDash: true, skipTheDishes: true, faceDrive: true}
           },
           {
             id: "3",
             name: "Lone Star Texas Grill",
+            image: "https://images.ctfassets.net/ikdnpo3iuq6f/6scUXm7KGwwrquEYn8Ox7t/23cf9841f183a8ba0180b79ee13c076f/lstg-home-hero-tablet_3x.jpg",
             address: "100 placeholder st.",
             price: "$$$",
             hours: [
@@ -92,6 +158,7 @@ class ExploreScreen extends Component {
           {
             id: "4",
             name: "Stooley's",
+            image: "https://b.zmtcdn.com/data/reviews_photos/af0/81850fa530c7457d63334af96285baf0.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*",
             address: "100 placeholder st.",
             price: "$",
             hours: [
@@ -296,7 +363,7 @@ class ExploreScreen extends Component {
 
           </ReastaurantExpanded>
             <FlatList
-            data={this.state.restaurants}
+            data={this.state.categories}
             numColumns="2"
             renderItem={this.renderItem}
             style={styles.list}

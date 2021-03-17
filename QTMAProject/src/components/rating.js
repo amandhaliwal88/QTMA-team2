@@ -79,6 +79,10 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     ratingCards: {
+        marginLeft: 20,
+        marginRight: 240,
+        marginTop: 15,
+        marginBottom: 15,
         display: 'flex',
         flexDirection: 'row',
         paddingHorizontal: 15,
@@ -89,7 +93,7 @@ const styles = StyleSheet.create({
         borderRadius: 15
       },
       ratingCardsText: {
-        fontSize: 30
+        fontSize: 30,
       },
       ratingCardsDetailed: {
         display: 'flex',
